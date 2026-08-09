@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-http://googleusercontent.com/map_location_reference/1
-  <title>[Hemet Sunset Rotary](http://googleusercontent.com/map_location_reference/0) • District 5330</title>
+  <title>[Rotary Club of San Jacinto]• District 5330</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
@@ -29,32 +27,24 @@ http://googleusercontent.com/map_location_reference/1
       padding: 0;
     }
 
-     body {
+    body {
       font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
-      background-color: #EBF3FA;
-      /* Very faint Rotary Blue cross-hatch pattern */
-      background-image: 
-        radial-gradient(rgba(0, 36, 108, 0.04) 1px, transparent 1px),
-        radial-gradient(rgba(0, 36, 108, 0.04) 1px, #EBF3FA 1px);
-      background-size: 24px 24px;
-      background-position: 0 0, 12px 12px;
+      background-color: var(--bg-canvas);
       color: var(--text-main);
-      line-height: 1.6;
-      font-size: 1rem;
+      line-height: 1.5;
     }
 
-    /* Expanded container max-width to utilize available screen real estate */
     .container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1.25rem;
+      padding: 0 1rem;
     }
 
     /* Top Royal Blue Navigation Bar */
     .top-nav-bar {
       background: var(--nav-blue);
       color: #FFFFFF;
-      padding: 0.65rem 0;
+      padding: 0.5rem 0;
       border-bottom: 1px solid #004580;
     }
 
@@ -63,17 +53,17 @@ http://googleusercontent.com/map_location_reference/1
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .nav-logo-icon {
-      height: 36px;
+      height: 32px;
       width: auto;
       background: #FFFFFF;
       border-radius: 50%;
@@ -83,15 +73,14 @@ http://googleusercontent.com/map_location_reference/1
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
-    /* Larger Navigation Link Text */
     .nav-links a {
       color: #FFFFFF;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 0.875rem;
     }
 
     .nav-links a:hover {
@@ -101,39 +90,38 @@ http://googleusercontent.com/map_location_reference/1
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .search-input {
-      padding: 0.35rem 0.65rem;
+      padding: 0.25rem 0.5rem;
       border: 1px solid var(--border-grey);
       border-radius: 3px;
-      font-size: 0.95rem;
-      width: 150px;
+      font-size: 0.8rem;
+      width: 130px;
     }
 
     .member-login-link {
       color: #FFFFFF;
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       text-decoration: none;
       font-weight: 600;
     }
 
     /* Hero Collage Container */
     .hero-collage-container {
-      margin: 1.25rem auto;
+      margin: 1rem auto;
     }
 
-    /* Updated Grid Ratios: Expanded middle column so left+middle+right cover canvas */
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1.25fr 1fr;
-      gap: 12px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
       background: var(--card-bg);
-      padding: 12px;
+      padding: 10px;
       border: 1px solid var(--border-grey);
       border-radius: 2px;
-      height: 410px;
+      height: 380px;
       overflow: hidden;
       box-sizing: border-box;
     }
@@ -142,23 +130,38 @@ http://googleusercontent.com/map_location_reference/1
     .hero-col-left {
       display: grid;
       grid-template-rows: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
       height: 100%;
       overflow: hidden;
     }
 
     .hero-title-card {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
-  border: 1px solid var(--border-grey);
-  border-top: 4px solid var(--rotary-gold);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  gap: 0.5rem; /* Ensures text and logo don't collide */
-  overflow: hidden;
-}
+      /* Solid white background provides the cleanest look for a non-transparent JPEG logo */
+      background: #FFFFFF;
+      /* Original borders and subtle shadow retained from previous style for branding */
+      border: 2px solid var(--rotary-blue);
+      border-top: 4px solid var(--rotary-gold);
+      border-radius: 4px;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
+      
+      /* Layout changes: */
+      /* Remove old justification/gap rules used for text and discrete logo */
+      justify-content: center; /* Center the full image */
+      align-items: center; /* Center the full image */
+      padding: 0; /* Remove padding to allow the image to fill edge-to-edge */
+      gap: 0; /* No gap needed for a single element */
+      overflow: hidden; /* Important to keep the contained image from spilling out */
+    }
+    
+    .hero-title-logo {
+      /* Scales the image to fit the box's size */
+      max-width: 100%;
+      max-height: 100%;
+     object-fit: contain; 
+     
+      /* Drop shadow retained for a nice effect on the contained graphic */
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+    }
 
     .hero-title-text {
       display: flex;
@@ -167,7 +170,7 @@ http://googleusercontent.com/map_location_reference/1
 
     .hero-title-text .title-top {
       color: var(--rotary-blue);
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: -0.2px;
@@ -176,7 +179,7 @@ http://googleusercontent.com/map_location_reference/1
     .hero-title-text .title-main {
       font-family: 'Roboto Slab', serif;
       color: var(--rotary-blue);
-      font-size: 2.75rem;
+      font-size: 2.5rem;
       font-weight: 800;
       line-height: 0.95;
       text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
@@ -184,23 +187,25 @@ http://googleusercontent.com/map_location_reference/1
 
     .hero-title-text .title-sub {
       color: var(--rotary-blue);
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
       line-height: 1.1;
     }
 
+    /* Increased Logo Size */
     .hero-title-logo {
       height: 125px;
       width: auto;
       object-fit: contain;
       filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+      transition: transform 0.2s ease;
     }
 
-    /* Column 2 (Middle - Expanded Width) */
+    /* Column 2 (Middle) */
     .hero-col-middle {
       display: grid;
       grid-template-rows: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
       height: 100%;
       overflow: hidden;
     }
@@ -241,7 +246,7 @@ http://googleusercontent.com/map_location_reference/1
       inset: 0;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
       color: #FFFFFF;
-      padding: 1.75rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -250,7 +255,7 @@ http://googleusercontent.com/map_location_reference/1
 
     .hero-overlay-text h2 {
       font-family: 'Roboto Slab', serif;
-      font-size: 2.85rem;
+      font-size: 2.6rem;
       line-height: 1.05;
       font-weight: 800;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
@@ -261,7 +266,7 @@ http://googleusercontent.com/map_location_reference/1
       top: 50%;
       transform: translateY(-50%);
       color: rgba(255, 255, 255, 0.8);
-      font-size: 2.2rem;
+      font-size: 2rem;
       user-select: none;
       cursor: pointer;
       z-index: 3;
@@ -272,9 +277,9 @@ http://googleusercontent.com/map_location_reference/1
     /* Main Content Layout */
     .content-grid {
       display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: 1fr 310px;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
     }
 
     .section-banner {
@@ -282,33 +287,33 @@ http://googleusercontent.com/map_location_reference/1
       border: 1px solid var(--border-grey);
       color: var(--rotary-blue);
       font-weight: 700;
-      font-size: 1.05rem;
-      padding: 0.65rem 1rem;
+      font-size: 0.925rem;
+      padding: 0.5rem 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
     .content-block {
       background: var(--card-bg);
       border: 1px solid var(--border-grey);
       border-radius: 4px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
 
     .content-block h3 {
       color: var(--rotary-blue);
-      font-size: 1.3rem;
-      margin-bottom: 0.85rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
     }
 
     .content-block p {
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: var(--text-main);
-      margin-bottom: 0.85rem;
-      line-height: 1.65;
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
     }
 
     .content-block a {
@@ -323,8 +328,8 @@ http://googleusercontent.com/map_location_reference/1
 
     /* Event Items */
     .event-item {
-      padding-bottom: 0.85rem;
-      margin-bottom: 0.85rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
       border-bottom: 1px dashed var(--border-light);
     }
 
@@ -336,51 +341,51 @@ http://googleusercontent.com/map_location_reference/1
 
     .event-title {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       color: var(--nav-blue);
       text-decoration: none;
       display: block;
     }
 
     .event-date {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #64748B;
     }
 
     /* Club Info Container */
     .club-info-container {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 1.75rem;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
       align-items: center;
     }
 
     .club-info-left h3 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: var(--rotary-blue);
       margin-bottom: 0.5rem;
     }
 
     .club-info-left img {
       width: 100%;
-      height: 125px;
+      height: 110px;
       object-fit: cover;
       border-radius: 4px;
       border: 1px solid var(--border-light);
     }
 
     .club-info-details p {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
     }
 
     .club-icons-row {
       display: flex;
-      gap: 1.75rem;
-      margin-top: 1.25rem;
-      padding-top: 0.85rem;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
       border-top: 1px solid var(--border-light);
-      font-size: 0.9rem;
+      font-size: 0.775rem;
       color: var(--nav-blue);
       font-weight: 600;
     }
@@ -390,34 +395,34 @@ http://googleusercontent.com/map_location_reference/1
       background: var(--card-bg);
       border: 1px solid var(--border-grey);
       border-radius: 4px;
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .sidebar-widget img {
       width: 100%;
-      height: 155px;
+      height: 140px;
       object-fit: cover;
       border-radius: 2px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
 
     .calendar-table {
       width: 100%;
       border-collapse: collapse;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin-top: 0.5rem;
     }
 
     .calendar-table th {
       color: var(--rotary-blue);
-      padding: 0.45rem 0;
+      padding: 0.35rem 0;
       font-weight: 700;
     }
 
     .calendar-table td {
-      padding: 0.45rem 0;
+      padding: 0.35rem 0;
       color: var(--text-main);
     }
 
@@ -432,22 +437,22 @@ http://googleusercontent.com/map_location_reference/1
     footer {
       background: #030303;
       color: #94A3B8;
-      font-size: 0.9rem;
-      padding-top: 2rem;
+      font-size: 0.8rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--border-grey);
     }
 
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.75rem;
-      padding-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     footer h5 {
       color: #FFFFFF;
-      font-size: 1.05rem;
-      margin-bottom: 0.65rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
     }
 
     footer a {
@@ -463,9 +468,9 @@ http://googleusercontent.com/map_location_reference/1
       background: #000000;
       color: #64748B;
       text-align: center;
-      padding: 1rem 0;
+      padding: 0.85rem 0;
       border-top: 1px solid #1E293B;
-      font-size: 0.85rem;
+      font-size: 0.775rem;
     }
 
     .scroll-top-btn {
@@ -474,8 +479,8 @@ http://googleusercontent.com/map_location_reference/1
       right: 1.5rem;
       background: #BAE6FD;
       color: var(--nav-blue);
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -501,10 +506,10 @@ http://googleusercontent.com/map_location_reference/1
   <!-- Top Blue Navigation Header -->
   <header class="top-nav-bar">
     <div class="container nav-container">
-      <div class="nav-left">
-        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Logo" class="nav-logo-icon">
+      <!--<div class="nav-left">
+        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Logo" class="nav-logo-icon">-->
         <ul class="nav-links">
-          <li><a href="sample2.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#meetings">Where We Meet</a></li>
           <li><a href="#membership">Become a Member</a></li>
@@ -528,21 +533,16 @@ http://googleusercontent.com/map_location_reference/1
         
         <!-- Column 1 (Left) -->
         <div class="hero-col-left">
+          
           <div class="hero-title-card">
-            <div class="hero-title-text">
-              <span class="title-top">San Jacinto</span>
-              <span class="title-main">Rotary</span>
-              <span class="title-sub">Club</span>
-            </div>
-            <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Emblem" class="hero-title-logo">
-          </div>
-
+  <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="San Jacinto Rotary Club Logo" class="hero-title-logo">
+</div>
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="San Jacinto Rotary Event">
           </div>
         </div>
 
-        <!-- Column 2 (Middle - Wider Allocation) -->
+        <!-- Column 2 (Middle) -->
         <div class="hero-col-middle">
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/120184005_1297352380607534_590167538840298044_n.jpg" alt="San Jacinto Rotarians Community Project">
@@ -574,7 +574,7 @@ http://googleusercontent.com/map_location_reference/1
         <!-- Section 1: Welcome -->
         <div class="section-banner">How You Can Help Change The World - While Having Fun!</div>
         <div class="content-block">
-          <h3>Join the [Rotary Club of San Jacinto](http://googleusercontent.com/map_location_reference/2). <span style="font-size: 0.95rem; font-weight: normal;">(Check Out Our <a href="https://www.facebook.com/SJRotary/" target="_blank">Facebook Page!</a>)</span></h3>
+          <h3>Join the Rotary Club of San Jacinto. <span style="font-size: 0.85rem; font-weight: normal;">(Check Out Our <a href="https://www.facebook.com/SJRotary/" target="_blank">Facebook Page!</a>)</span></h3>
           <p>
             Rotary International is the world's premier volunteer service organization, with more than 1.2 million members in 33,000 clubs worldwide. Rotary Club of San Jacinto members are local business leaders, community professionals, and retirees who meet weekly to combat hunger, improve local literacy, support youth initiatives, and promote peace under the motto "Service Above Self."
           </p>
@@ -589,10 +589,10 @@ http://googleusercontent.com/map_location_reference/1
         <!-- Section 2: Diversity Policy -->
         <div class="section-banner">Rotary's Policy of Diversity, Equity and Inclusion</div>
         <div class="content-block">
-          <p style="font-weight: 600; color: var(--rotary-blue); font-size: 1.05rem;">
+          <p style="font-weight: 600; color: var(--rotary-blue);">
             We believe that all people hold visible and invisible qualities that inherently make them unique, and we strive to create an inclusive culture where each person knows they are valued and belong.
           </p>
-          <p style="font-style: italic; font-size: 0.9rem; color: #64748B; margin-bottom: 0;">- Rotary International</p>
+          <p style="font-style: italic; font-size: 0.825rem; color: #64748B; margin-bottom: 0;">- Rotary International</p>
         </div>
 
         <!-- Section 3: Upcoming Events -->
@@ -621,7 +621,7 @@ http://googleusercontent.com/map_location_reference/1
               <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/725191326_1303740901874786_1147695780285326040_n.jpg" alt="San Jacinto Rotary Gathering">
             </div>
             <div class="club-info-details">
-              <h4 style="color: var(--rotary-blue); margin-bottom: 0.35rem; font-size: 1.15rem;">Service Above Self</h4>
+              <h4 style="color: var(--rotary-blue); margin-bottom: 0.35rem;">Service Above Self</h4>
               <p><strong>Wednesdays at 12:00 p.m.</strong></p>
               <p>📍 Emilio’s Mexican Restaurant<br>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
               <p><strong>Mailing Address:</strong> P.O. Box 1691, San Jacinto, CA 92581</p>
@@ -644,7 +644,7 @@ http://googleusercontent.com/map_location_reference/1
         <div class="section-banner">Service Above Self</div>
         <div class="sidebar-widget">
           <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/65373642_934327840243325_8509604238114947072_n.jpg" alt="San Jacinto Rotary Service Project">
-          <p style="font-size: 0.95rem; line-height: 1.6;">
+          <p style="font-size: 0.85rem; line-height: 1.6;">
             The Rotary motto conveys the humanitarian spirit of the organization's members. Strong fellowship among Rotarians and meaningful community service projects characterize Rotary in the San Jacinto Valley.
           </p>
         </div>
@@ -652,13 +652,13 @@ http://googleusercontent.com/map_location_reference/1
         <!-- Sidebar Widget 2 -->
         <div class="section-banner">Member Resources</div>
         <div class="sidebar-widget">
-          <p style="font-size: 0.95rem; margin-bottom: 0.65rem;">
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
             📘 <a href="https://www.facebook.com/SJRotary/" target="_blank" style="color: var(--nav-blue); font-weight: 600;">Our Facebook Page!</a>
           </p>
-          <p style="font-size: 0.95rem; margin-bottom: 0.65rem;">
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
             🌐 <a href="https://www.rotary.org" target="_blank" style="color: var(--nav-blue);">Rotary International</a>
           </p>
-          <p style="font-size: 0.95rem;">
+          <p style="font-size: 0.85rem;">
             🔄 <a href="#" style="color: var(--nav-blue);">Club Make-Ups</a>
           </p>
         </div>
@@ -704,7 +704,7 @@ http://googleusercontent.com/map_location_reference/1
   <footer>
     <div class="container footer-content">
       <div>
-        <h5>[Rotary Club of San Jacinto](http://googleusercontent.com/map_location_reference/3)</h5>
+        <h5>Rotary Club of San Jacinto</h5>
         <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
       </div>
       <div>
@@ -718,7 +718,7 @@ http://googleusercontent.com/map_location_reference/1
     </div>
 
     <div class="footer-subbar">
-      Designed by <a href="edataworker.vercel.app">eDataWorker</a> | <a href="#">Privacy Statement</a> | <a href="#">Cookie Policy</a>
+            Designed by <a href="edataworker.vercel.app">eDataWorker </a> | <a href="#">Privacy Statement</a> | <a href="#">Cookie Policy</a>
     </div>
   </footer>
 
