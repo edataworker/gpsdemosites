@@ -6,16 +6,15 @@
   <title>Rotary Club of San Jacinto • District 5330</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
       --bg-canvas: #EBF3FA;        /* Light whitish-blue canvas */
       --card-bg: #FFFFFF;
-      --nav-blue: #005DAB;         /* Royal blue navigation bar */
+      --nav-blue: #005DAB;         /* Royal blue header */
       --rotary-blue: #00246C;      /* Deep primary blue */
       --text-main: #2D3748;
-      --text-dark: #030303;
       --border-grey: #CBD5E1;      /* Light grey border */
       --border-light: #E2E8F0;
       --section-header-bg: #EAECEE;/* Light grey section header bar */
@@ -63,7 +62,7 @@
     }
 
     .nav-logo-icon {
-      height: 32px;
+      height: 30px;
       width: auto;
       background: #FFFFFF;
       border-radius: 50%;
@@ -81,12 +80,10 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.875rem;
-      transition: opacity 0.2s;
     }
 
     .nav-links a:hover {
       text-decoration: underline;
-      opacity: 0.9;
     }
 
     .nav-right {
@@ -110,95 +107,133 @@
       font-weight: 600;
     }
 
-    /* Hero Banner Collage Section */
+    /* Hero Banner Collage - Exact Screenshot Layout Match */
     .hero-collage-container {
       margin: 1rem auto;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 280px 1fr 320px;
-      gap: 0.75rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
       background: var(--card-bg);
-      padding: 0.75rem;
+      padding: 10px;
       border: 1px solid var(--border-grey);
-      border-radius: 4px;
-      height: 260px;
+      border-radius: 2px;
+      height: 380px;
     }
 
-    .hero-card-left {
+    /* Left Column (Stack: Title Card + Image 1) */
+    .hero-col-left {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      height: 100%;
+    }
+
+    .hero-title-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1rem;
+    }
+
+    .hero-title-text {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0.75rem;
-      border: 1px solid var(--border-light);
-      background: #FAFAFA;
-      height: 100%;
     }
 
-    .hero-card-left img {
-      max-height: 95px;
-      width: auto;
-      object-fit: contain;
-      margin-bottom: 0.35rem;
+    .hero-title-text .title-top {
+      color: var(--rotary-blue);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.1;
     }
 
-    .hero-card-left h2 {
+    .hero-title-text .title-main {
       font-family: 'Roboto Slab', serif;
       color: var(--rotary-blue);
-      font-size: 1.3rem;
-      line-height: 1.15;
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1;
     }
 
-    .hero-card-middle {
+    .hero-title-text .title-sub {
+      color: var(--rotary-blue);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .hero-title-logo {
+      height: 105px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Middle Column (Stack: Image 2 + Image 3) */
+    .hero-col-middle {
       display: grid;
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 0.5rem;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
       height: 100%;
     }
 
-    .hero-card-middle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 1px solid var(--border-light);
-    }
-
-    .hero-card-right {
+    /* Right Column (Full-Height Image 4 with Overlay) */
+    .hero-col-right {
       position: relative;
-      border-radius: 2px;
+      height: 100%;
       overflow: hidden;
       border: 1px solid var(--border-light);
-      height: 100%;
     }
 
-    .hero-card-right img {
+    .hero-img-box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+
+    .hero-img-box img,
+    .hero-col-right img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .hero-overlay-text {
       position: absolute;
       inset: 0;
-      background: rgba(0, 36, 108, 0.5);
+      background: rgba(0, 0, 0, 0.25);
       color: #FFFFFF;
-      padding: 1rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .hero-overlay-text h2 {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.6rem;
-      line-height: 1.15;
-      font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      font-size: 2.8rem;
+      line-height: 1.05;
+      font-weight: 800;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 2rem;
+      user-select: none;
+      cursor: pointer;
+    }
+    .carousel-arrow.left { left: 8px; }
+    .carousel-arrow.right { right: 8px; }
 
     /* Main Page 2-Column Content Grid */
     .content-grid {
@@ -213,7 +248,6 @@
       background: var(--section-header-bg);
       border: 1px solid var(--border-grey);
       color: var(--rotary-blue);
-      font-family: 'Open Sans', sans-serif;
       font-weight: 700;
       font-size: 0.925rem;
       padding: 0.5rem 0.85rem;
@@ -257,19 +291,18 @@
     /* Four-Way Test Cards */
     .four-way-box {
       background: var(--card-bg);
-      padding: 0.85rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 4px;
       border: 1px solid var(--border-light);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.5rem;
       font-size: 0.875rem;
     }
 
     .four-way-box span {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--rotary-blue);
       display: block;
-      margin-bottom: 0.2rem;
     }
 
     /* Upcoming Events List */
@@ -301,9 +334,9 @@
     /* Club Info Box */
     .club-info-container {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 200px 1fr;
       gap: 1.5rem;
-      align-items: start;
+      align-items: center;
     }
 
     .club-info-left h3 {
@@ -313,8 +346,11 @@
     }
 
     .club-info-left img {
-      width: 75px;
-      height: auto;
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border-light);
     }
 
     .club-info-details p {
@@ -340,6 +376,14 @@
       border-radius: 4px;
       padding: 1rem;
       margin-bottom: 1.25rem;
+    }
+
+    .sidebar-widget img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 0.75rem;
     }
 
     /* Calendar Widget Table */
@@ -371,7 +415,7 @@
 
     /* Footer Section */
     footer {
-      background: var(--text-dark);
+      background: #030303;
       color: #94A3B8;
       font-size: 0.8rem;
       padding-top: 1.5rem;
@@ -401,12 +445,12 @@
     }
 
     .footer-subbar {
-      background: var(--bg-canvas);
-      color: var(--text-dark);
+      background: #000000;
+      color: #64748B;
       text-align: center;
       padding: 0.85rem 0;
-      border-top: 1px solid var(--border-grey);
-      font-size: 0.8rem;
+      border-top: 1px solid #1E293B;
+      font-size: 0.775rem;
     }
 
     /* Floating Scroll Button */
@@ -444,15 +488,15 @@
   <header class="top-nav-bar">
     <div class="container nav-container">
       <div class="nav-left">
-        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary International Wheel Logo" class="nav-logo-icon">
+        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Logo" class="nav-logo-icon">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#meetings">Where We Meet</a></li>
-          <li><a href="#projects">Service Projects</a></li>
-          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="#membership">Become a Member</a></li>
+          <li><a href="#files">Download Files</a></li>
           <li><a href="#calendar">Calendar</a></li>
-          <li><a href="https://www.facebook.com/SJRotary/" target="_blank">Facebook Page</a></li>
+          <li><a href="https://www.facebook.com/SJRotary/" target="_blank">Stories/Photos</a></li>
         </ul>
       </div>
       <div class="nav-right">
@@ -464,28 +508,48 @@
 
   <div class="container">
     
-    <!-- Hero Banner Collage Section -->
+    <!-- Hero Banner Collage Section (Matches Screenshot Grid Structure Exactly) -->
     <section class="hero-collage-container">
       <div class="hero-grid">
         
-        <!-- Left Branding Block -->
-        <div class="hero-card-left">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="San Jacinto Rotary Club Emblem">
-          <h2>Rotary Club of<br>San Jacinto</h2>
-        </div>
-
-        <!-- Center Photo Collage -->
-        <div class="hero-card-middle">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/community.jpg" alt="San Jacinto Community Outreach Project">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/youth.jpg" alt="Youth Leadership and Recognition">
-        </div>
-
-        <!-- Right Callout Banner -->
-        <div class="hero-card-right">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/82253708_1098398897169551_5110102529153171456_n.jpg" alt="Rotarians in San Jacinto">
-          <div class="hero-overlay-text">
-            <h2>Join Us<br>For Lunch.<br>Service Above<br>Self!</h2>
+        <!-- Column 1 (Left) -->
+        <div class="hero-col-left">
+          <!-- Top Box: Title Block with Text + Rotary Emblem -->
+          <div class="hero-title-card">
+            <div class="hero-title-text">
+              <span class="title-top">San Jacinto</span>
+              <span class="title-main">Rotary</span>
+              <span class="title-sub">Club</span>
+            </div>
+            <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Emblem" class="hero-title-logo">
           </div>
+          <!-- Bottom Box: Image 1 -->
+          <div class="hero-img-box">
+            <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="San Jacinto Rotary Event">
+          </div>
+        </div>
+
+        <!-- Column 2 (Middle) -->
+        <div class="hero-col-middle">
+          <!-- Top Box: Image 2 -->
+          <div class="hero-img-box">
+            <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/120184005_1297352380607534_590167538840298044_n.jpg" alt="San Jacinto Rotarians Community Project">
+          </div>
+          <!-- Bottom Box: Image 3 -->
+          <div class="hero-img-box">
+            <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/475342995_929111552671058_8719820579238323804_n.jpg" alt="Rotary Volunteers">
+          </div>
+        </div>
+
+        <!-- Column 3 (Right) -->
+        <!-- Full-Height Box: Image 4 with Overlay Text & Arrows -->
+        <div class="hero-col-right">
+          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/480910088_2439319626410798_1191579870285344681_n.jpg" alt="San Jacinto Valley Banner">
+          <div class="hero-overlay-text">
+            <h2>Join Us<br>For Lunch.<br>Check Us<br>Out!</h2>
+          </div>
+          <span class="carousel-arrow left">‹</span>
+          <span class="carousel-arrow right">›</span>
         </div>
 
       </div>
@@ -497,53 +561,39 @@
       <!-- Left Main Column -->
       <main class="main-content-column">
         
-        <!-- Section 1: Welcome & Overview -->
-        <div class="section-banner">People of Action in San Jacinto</div>
+        <!-- Section 1: Welcome -->
+        <div class="section-banner">How You Can Help Change The World - While Having Fun!</div>
         <div class="content-block">
-          <h3>Welcome to the Rotary Club of San Jacinto <span style="font-size: 0.85rem; font-weight: normal;">(Follow us on <a href="https://www.facebook.com/SJRotary/" target="_blank">Facebook</a>)</span></h3>
+          <h3>Join the Rotary Club of San Jacinto. <span style="font-size: 0.85rem; font-weight: normal;">(Check Out Our <a href="https://www.facebook.com/SJRotary/" target="_blank">Facebook Page!</a>)</span></h3>
           <p>
-            The Rotary Club of San Jacinto unites community leaders, business professionals, and dedicated volunteers committed to making a tangible impact across the San Jacinto Valley. Guided by Rotary International’s core motto, <strong>"Service Above Self,"</strong> our members spearhead local civic initiatives, support youth development, and deliver hands-on community assistance year-round.
+            Rotary International is the world's premier volunteer service organization, with more than 1.2 million members in 33,000 clubs worldwide. Rotary Club of San Jacinto members are local business leaders, community professionals, and retirees who meet weekly to combat hunger, improve local literacy, support youth initiatives, and promote peace under the motto "Service Above Self."
           </p>
           <p>
-            We meet weekly over lunch to exchange ideas, hear from civic guest speakers, and coordinate initiatives ranging from local food drives and teacher recognitions to youth leadership scholarships.
+            We meet every Wednesday over lunch while listening to great civic speakers, connecting with community partners, and organizing service projects while having a lot of fun!
           </p>
-          <p><strong>Club Secretary Contact:</strong><br>
+          <p><strong>Contact:</strong><br>
           Peaches — Club Secretary<br>
           <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a></p>
         </div>
 
-        <!-- Section 2: The 4-Way Test -->
-        <div class="section-banner">The Rotary 4-Way Test</div>
+        <!-- Section 2: Diversity Policy -->
+        <div class="section-banner">Rotary's Policy of Diversity, Equity and Inclusion</div>
         <div class="content-block">
-          <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 0.75rem;">Of the things we think, say or do:</p>
-          
-          <div class="four-way-box">
-            <span>1st</span>
-            Is it the TRUTH?
-          </div>
-          <div class="four-way-box">
-            <span>2nd</span>
-            Is it FAIR to all concerned?
-          </div>
-          <div class="four-way-box">
-            <span>3rd</span>
-            Will it build GOODWILL & Better Friendships?
-          </div>
-          <div class="four-way-box">
-            <span>4th</span>
-            Will it be BENEFICIAL to all concerned?
-          </div>
+          <p style="font-weight: 600; color: var(--rotary-blue);">
+            We believe that all people hold visible and invisible qualities that inherently make them unique, and we strive to create an inclusive culture where each person knows they are valued and belong.
+          </p>
+          <p style="font-style: italic; font-size: 0.825rem; color: #64748B; margin-bottom: 0;">- Rotary International</p>
         </div>
 
         <!-- Section 3: Upcoming Events -->
-        <div class="section-banner">Upcoming Meetings & Events</div>
+        <div class="section-banner">Upcoming Events</div>
         <div class="content-block">
           <div class="event-item">
-            <a href="#" class="event-title">Weekly Lunch Meeting & Guest Speaker</a>
+            <a href="#" class="event-title">Weekly Lunch Meeting & Guest Speaker Presentation</a>
             <div class="event-date">Wed, Aug 12, 2026 • 12:00 p.m. – 1:00 p.m.</div>
           </div>
           <div class="event-item">
-            <a href="#" class="event-title">Student of the Month & Youth Leadership Awards</a>
+            <a href="#" class="event-title">Student of the Month & Youth Awards Recognition</a>
             <div class="event-date">Wed, Aug 19, 2026 • 12:00 p.m. – 1:00 p.m.</div>
           </div>
           <div class="event-item">
@@ -553,25 +603,25 @@
         </div>
 
         <!-- Section 4: Club Meeting Location -->
-        <div class="section-banner">Meeting Information</div>
+        <div class="section-banner">Club Information</div>
         <div class="content-block">
           <div class="club-info-container">
             <div class="club-info-left">
               <h3>Join Us!</h3>
-              <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="San Jacinto Rotary Wheel">
+              <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/725191326_1303740901874786_1147695780285326040_n.jpg" alt="San Jacinto Rotary Gathering">
             </div>
             <div class="club-info-details">
-              <h4 style="color: var(--rotary-blue); margin-bottom: 0.35rem;">Weekly Lunch Gathering</h4>
-              <p><strong>Wednesdays at 12:00 PM</strong></p>
+              <h4 style="color: var(--rotary-blue); margin-bottom: 0.35rem;">Service Above Self</h4>
+              <p><strong>Wednesdays at 12:00 p.m.</strong></p>
               <p>📍 Emilio’s Mexican Restaurant<br>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
               <p><strong>Mailing Address:</strong> P.O. Box 1691, San Jacinto, CA 92581</p>
               <p><strong>Email:</strong> <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a></p>
             </div>
           </div>
           <div class="club-icons-row">
-            <span>🌐 District 5330 Website</span>
-            <span>📷 Photo Gallery</span>
-            <span>📘 Facebook Page</span>
+            <span>🌐 District 5330 Site</span>
+            <span>📰 Bulletins</span>
+            <span>🗺️ Venue Map</span>
           </div>
         </div>
 
@@ -583,22 +633,23 @@
         <!-- Sidebar Widget 1 -->
         <div class="section-banner">Service Above Self</div>
         <div class="sidebar-widget">
+          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/65373642_934327840243325_8509604238114947072_n.jpg" alt="San Jacinto Rotary Service Project">
           <p style="font-size: 0.85rem; line-height: 1.6;">
-            San Jacinto Rotarians connect community leaders to support local education, honor first responders, mobilize essential relief drives, and build lasting friendships throughout the Valley.
+            The Rotary motto conveys the humanitarian spirit of the organization's members. Strong fellowship among Rotarians and meaningful community service projects characterize Rotary in the San Jacinto Valley.
           </p>
         </div>
 
         <!-- Sidebar Widget 2 -->
-        <div class="section-banner">Quick Links</div>
+        <div class="section-banner">Member Resources</div>
         <div class="sidebar-widget">
           <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
-            📘 <a href="https://www.facebook.com/SJRotary/" target="_blank" style="color: var(--nav-blue); font-weight: 600;">San Jacinto Rotary Facebook</a>
+            📘 <a href="https://www.facebook.com/SJRotary/" target="_blank" style="color: var(--nav-blue); font-weight: 600;">Our Facebook Page!</a>
           </p>
           <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
             🌐 <a href="https://www.rotary.org" target="_blank" style="color: var(--nav-blue);">Rotary International</a>
           </p>
           <p style="font-size: 0.85rem;">
-            📸 <a href="gallery.html" style="color: var(--nav-blue);">Club Photo Gallery</a>
+            🔄 <a href="#" style="color: var(--nav-blue);">Club Make-Ups</a>
           </p>
         </div>
 
@@ -657,7 +708,7 @@
     </div>
 
     <div class="footer-subbar">
-      © 2026 Rotary Club of San Jacinto • District 5330 • Service Above Self
+      Powered by ClubRunner © 2002–2026. All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Cookie Policy</a>
     </div>
   </footer>
 
