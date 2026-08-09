@@ -137,37 +137,25 @@
       overflow: hidden;
     }
 
-    .hero-title-card {
-      /* Solid white background provides the cleanest look for a non-transparent JPEG logo */
+    .hero-logo-box {
       background: #FFFFFF;
-      /* Original borders and subtle shadow retained from previous style for branding */
       border: 2px solid var(--rotary-blue);
       border-top: 4px solid var(--rotary-gold);
       border-radius: 4px;
       box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
-      
-      /* Layout changes: */
-      /* Remove old justification/gap rules used for text and discrete logo */
-      justify-content: center; /* Center the full image */
-      align-items: center; /* Center the full image */
-      padding: 0; /* Remove padding to allow the image to fill edge-to-edge */
-      gap: 0; /* No gap needed for a single element */
-      overflow: hidden; /* Important to keep the contained image from spilling out */
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+      height: 180px; /* Adjust height as needed to fit collage grid rows */
+      width: auto;
+      display: flex;
     }
-    
-    .hero-title-logo {
-      /* Scales the image to fit the box's size */
+    .hero-full-logo {
       max-width: 100%;
       max-height: 100%;
-     object-fit: contain; 
-     
-      /* Drop shadow retained for a nice effect on the contained graphic */
+      object-fit: contain; 
       filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
-    }
-
-    .hero-title-text {
-      display: flex;
-      flex-direction: column;
     }
 
     .hero-title-text .title-top {
@@ -194,7 +182,6 @@
       line-height: 1.1;
     }
 
-    /* Increased Logo Size */
     .hero-title-logo {
       height: 125px;
       width: auto;
@@ -536,9 +523,9 @@
         <!-- Column 1 (Left) -->
         <div class="hero-col-left">
           
-          <div class="hero-title-card">
-  <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="San Jacinto Rotary Club Logo" class="hero-title-logo">
-</div>
+          <div class="hero-logo-box">
+            <img src="images/logo.png" alt="San Jacinto Rotary Club Logo" class="hero-full-logo">
+        </div>
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="San Jacinto Rotary Event">
           </div>
@@ -557,9 +544,9 @@
         <!-- Column 3 (Right) -->
         <div class="hero-col-right">
           <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/725191326_1303740901874786_1147695780285326040_n.jpg" alt="Rotary Community Gathering">
-          <div class="hero-overlay-text">
+          <!--<div class="hero-overlay-text">
             <h2>Join Us<br>For Lunch.<br>Check Us<br>Out!</h2>
-          </div>
+          </div>-->
           <span class="carousel-arrow left">‹</span>
           <span class="carousel-arrow right">›</span>
         </div>
