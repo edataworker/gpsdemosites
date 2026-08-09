@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rotary Club of San Jacinto · People of Action</title>
-  <!-- Font Awesome for clean icons (optional but adds polish) -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -22,9 +22,9 @@
 
     /* ----- Phoenix West inspired palette ----- */
     :root {
-      --rotary-blue: #003366;       /* deep navy – primary */
-      --rotary-blue-dark: #002244;   /* darker for accents */
-      --rotary-gold: #fdb813;        /* warm gold – CTA / highlights */
+      --rotary-blue: #003366;
+      --rotary-blue-dark: #002244;
+      --rotary-gold: #fdb813;
       --rotary-gold-hover: #e0a20b;
       --light-bg: #f8fafc;
       --text-dark: #0b1a2e;
@@ -119,10 +119,10 @@
       transform: scale(1.02);
     }
 
-    /* ----- HERO (with local images) ----- */
+    /* ----- HERO (with auto images from GitHub) ----- */
     .hero {
       background: linear-gradient(135deg, rgba(0,51,102,0.92) 0%, rgba(0,34,68,0.75) 100%),
-                  url('/images/hero-bg.jpg') center/cover no-repeat;
+                  url('https://github.com/edataworker/gpsdemosites/raw/main/images/hero-bg.jpg') center/cover no-repeat;
       min-height: 520px;
       display: flex;
       align-items: center;
@@ -238,7 +238,7 @@
       font-size: 0.85rem;
     }
 
-    /* ----- IMPACT CARDS (3-up) ----- */
+    /* ----- IMPACT CARDS (3-up with auto images) ----- */
     .impact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -459,8 +459,8 @@
     </div>
   </div>
 
-  <!-- HERO (images from /images folder) -->
-  <section class="hero" style="background: linear-gradient(135deg, rgba(0,51,102,0.92) 0%, rgba(0,34,68,0.75) 100%), url('/images/hero-bg.jpg') center/cover no-repeat;">
+  <!-- HERO (images auto-loaded from GitHub) -->
+  <section class="hero" style="background: linear-gradient(135deg, rgba(0,51,102,0.92) 0%, rgba(0,34,68,0.75) 100%), url('https://github.com/edataworker/gpsdemosites/raw/main/images/hero-bg.jpg') center/cover no-repeat;">
     <div class="container">
       <div class="hero-content">
         <h1>People of <i>Action</i> in the Valley</h1>
@@ -495,7 +495,7 @@
     </div>
   </section>
 
-  <!-- IMPACT / SERVICE GRID (3 images from /images) -->
+  <!-- IMPACT / SERVICE GRID (3 images auto-loaded from GitHub) -->
   <section style="background: #f8fafc; padding: 3.5rem 0;" id="work">
     <div class="container">
       <div style="text-align: center; margin-bottom: 2.5rem;">
@@ -504,21 +504,21 @@
       </div>
       <div class="impact-grid">
         <div class="impact-card">
-          <img src="/images/youth-service.jpg" alt="Youth & Education">
+          <img src="https://github.com/edataworker/gpsdemosites/raw/main/images/youth-service.jpg" alt="Youth & Education" onerror="this.src='https://github.com/edataworker/gpsdemosites/raw/main/images/default.jpg'; this.onerror=null;">
           <div class="impact-card-body">
             <h3><i class="fas fa-graduation-cap" style="color:var(--rotary-gold);margin-right:6px;"></i>Youth & Education</h3>
             <p>Scholarships, literacy programs, and youth leadership grants that empower the next generation.</p>
           </div>
         </div>
         <div class="impact-card">
-          <img src="/images/community-service.jpg" alt="Community Service">
+          <img src="https://github.com/edataworker/gpsdemosites/raw/main/images/community-service.jpg" alt="Community Service" onerror="this.src='https://github.com/edataworker/gpsdemosites/raw/main/images/default.jpg'; this.onerror=null;">
           <div class="impact-card-body">
             <h3><i class="fas fa-hand-holding-heart" style="color:var(--rotary-gold);margin-right:6px;"></i>Community Service</h3>
             <p>Food drives, park cleanups, and celebrating local heroes — from teachers to first responders.</p>
           </div>
         </div>
         <div class="impact-card">
-          <img src="/images/leadership-recognition.jpg" alt="Leadership & Recognition">
+          <img src="https://github.com/edataworker/gpsdemosites/raw/main/images/leadership-recognition.jpg" alt="Leadership & Recognition" onerror="this.src='https://github.com/edataworker/gpsdemosites/raw/main/images/default.jpg'; this.onerror=null;">
           <div class="impact-card-body">
             <h3><i class="fas fa-award" style="color:var(--rotary-gold);margin-right:6px;"></i>Leadership & Recognition</h3>
             <p>Honoring Citizen of the Year, police officers, firefighters, and educators who shape our community.</p>
