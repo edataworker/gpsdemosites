@@ -365,12 +365,11 @@ body {
     }
     .four-way-box span { font-size: 1.25rem; font-weight: 800; color: var(--rotary-gold); display: block; }
 
-   /* Rotary Portal Footer */
+  /* Scottsdale Rotary Style Footer */
 footer {
-  background: var(--rotary-blue); /* #00246C */
-  color: #CBD5E1;
-  padding-top: 3.5rem;
-  font-size: 0.875rem;
+  background: #030303; /* Matches Scottsdale Rotary primary dark background */
+  color: #FFFFFF;
+  padding-top: 2.5rem;
   border-top: 4px solid var(--rotary-gold);
 }
 
@@ -378,21 +377,25 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
 }
 
 footer h5 {
-  color: var(--white);
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
+  color: var(--rotary-gold); /* Rotary Gold headings */
+  font-size: 1rem;
+  margin-bottom: 0.85rem;
   font-family: 'Roboto Slab', serif;
-  border-bottom: 2px solid rgba(247, 168, 27, 0.5); /* Gold underline */
-  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.4rem;
   display: inline-block;
 }
 
-footer p {
-  line-height: 1.7;
+footer p, footer li {
+  color: #E2E8F0;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 footer a {
@@ -406,6 +409,25 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Light Sub-Footer Bar (Matches body canvas `#EBF3FA`) */
+.footer-bottom-bar {
+  background: #EBF3FA;
+  color: #030303;
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.825rem;
+  border-top: 1px solid #CBD5E1;
+}
+
+.footer-bottom-bar a {
+  color: var(--rotary-royal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-bottom-bar a:hover {
+  text-decoration: underline;
+}
 /* Darker Navy Bottom Copyright Strip */
 .copyright-bar {
   background: #001740;
@@ -668,6 +690,7 @@ footer a:hover {
   </section>
 
   <!-- Footer -->
+<!-- Footer -->
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
@@ -680,7 +703,7 @@ footer a:hover {
       </div>
       <div>
         <h5>Meeting Info</h5>
-        <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
+        <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>2340 S San Jacinto Ave, CA</p>
       </div>
       <div>
         <h5>Quick Links</h5>
@@ -693,13 +716,14 @@ footer a:hover {
     </div>
   </div>
 
-  <div class="copyright-bar">
+  <!-- ClubRunner Style Whitish-Blue Bottom Bar -->
+  <div class="footer-bottom-bar">
     <div class="container">
-      © 2026 Rotary Club of San Jacinto • District 5330 • Service Above Self
+      © 2026 Rotary Club of San Jacinto • District 5330 • <a href="index.html">Home</a>
     </div>
   </div>
 </footer>
-
+  
   <!-- Modal -->
   <div class="modal" id="guestModal">
     <div class="modal-content">
