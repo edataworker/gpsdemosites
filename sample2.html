@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotary Club of San Jacinto, CA | People of Action</title>
+  <style>
+    :root {
+      --primary: #0C3C7C;
+      --primary-dark: #07254D;
+      --accent: #F7A81B;
+      --accent-hover: #D98E0C;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --bg-light: #F1F5F9;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Top Bar Header */
+    header { background: var(--primary); color: var(--white); }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .brand-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+    .brand-title span { color: var(--accent); }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(90deg, rgba(12, 60, 124, 0.92) 0%, rgba(12, 60, 124, 0.6) 100%),
+                  url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1600&q=80') center/cover;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+    }
+    .hero-container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .hero-content { max-width: 650px; }
+    .hero-content h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem; }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+    /* Two Column Intro & Venue Box */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .intro-text h2 { color: var(--primary); font-size: 2rem; margin-bottom: 1rem; font-weight: 800; }
+    .meeting-card {
+      background: #EBF3FE;
+      border-left: 6px solid var(--accent);
+      padding: 2rem;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .meeting-card h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem; }
+    .meeting-card p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+    /* Impact Cards */
+    .impact-section { background: var(--bg-light); padding: 4rem 0; }
+    .impact-header { text-align: center; margin-bottom: 3rem; }
+    .impact-header h2 { color: var(--primary); font-size: 2.2rem; font-weight: 800; }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 1.5rem; }
+    .card-body h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+    /* Phoenix West Inspired DEI Banner */
+    .dei-banner {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 3.5rem 0;
+      text-align: center;
+    }
+    .dei-container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+    .dei-banner h3 { color: var(--accent); font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .dei-banner p { font-size: 1.05rem; opacity: 0.9; }
+
+    /* Guest Contact Form Card */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-control { width: 100%; padding: 0.8rem; margin-top: 0.4rem; margin-bottom: 1.2rem; border: 1px solid #CBD5E1; border-radius: 6px; }
+
+    /* Footer */
+    footer {
+      background: #05162E;
+      color: #94A3B8;
+      padding: 3rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    .footer-flex { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .copy { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #1E293B; font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-title">Rotary Club of <span>San Jacinto</span></div>
+      <nav>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#dei">Diversity Policy</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>People of Action in the San Jacinto Valley</h1>
+        <p>We unite leaders, build community, and drive local & international service projects under the motto "Service Above Self."</p>
+        <a href="#visit" class="btn">Join Us For Lunch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container" id="about">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Welcome to San Jacinto Rotary</h2>
+        <p>Rotary International is the world's premier volunteer service organization. In San Jacinto, our members are local business leaders, professionals, educators, and retirees who gather weekly for fellowship, inspiring guest speakers, and project planning.</p>
+        <p style="margin-top: 1rem;">From supporting local high school students with scholarships to recognizing local first responders and teachers, our club provides hands-on leadership where it matters most.</p>
+      </div>
+
+      <!-- Meeting Box Spotlight -->
+      <div class="meeting-card">
+        <h3>📍 Weekly Luncheon</h3>
+        <p><strong>When:</strong> Every Wednesday @ 12:00 PM</p>
+        <p><strong>Venue:</strong> Emilio’s Mexican Restaurant & Cantina</p>
+        <p><strong>Address:</strong> 2340 S San Jacinto Ave, San Jacinto, CA 92583</p>
+        <p style="margin-top: 1rem; color: var(--primary); font-weight: 700;">Guests and visiting Rotarians are always welcome!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Areas of Work Grid -->
+  <section class="impact-section" id="work">
+    <div class="container" style="padding-top:0; padding-bottom:0;">
+      <div class="impact-header">
+        <h2>Where We Focus Our Energy</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Youth Services">
+          <div class="card-body">
+            <h3>Youth & Education</h3>
+            <p>Empowering local students through youth leadership grants, literacy drives, and annual high school senior scholarships.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Community Service">
+          <div class="card-body">
+            <h3>Community Service</h3>
+            <p>Hands-on local initiatives, supporting food banks, and celebrating San Jacinto's Citizen of the Year.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Leadership">
+          <div class="card-body">
+            <h3>Leadership & Recognition</h3>
+            <p>Honoring local educators, police officers, firefighters, and unsung community heroes every year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diversity, Equity & Inclusion (DEI) Section (Phoenix West Inspired) -->
+  <section class="dei-banner" id="dei">
+    <div class="dei-container">
+      <h3>Commitment to Diversity, Equity & Inclusion</h3>
+      <p>"At Rotary, we understand that cultivating a diverse, equitable, and inclusive culture is essential to realizing our vision of a world where people unite and take action to create lasting change."</p>
+    </div>
+  </section>
+
+  <!-- Contact/Visit Section -->
+  <div class="container" id="visit">
+    <div class="contact-card">
+      <h2 style="color:var(--primary); text-align:center; margin-bottom: 0.5rem;">Join Us for a Lunch Meeting</h2>
+      <p style="text-align:center; color: var(--text-muted); margin-bottom: 1.5rem;">Interested in becoming a member or visiting our club? Send us a message!</p>
+      <form onsubmit="alert('Thank you! A member of San Jacinto Rotary will contact you shortly.'); return false;">
+        <label style="font-weight:600;">Your Name</label>
+        <input type="text" class="form-control" required placeholder="John Smith">
+        
+        <label style="font-weight:600;">Email Address</label>
+        <input type="email" class="form-control" required placeholder="john@example.com">
+        
+        <label style="font-weight:600;">Message or Preferred Visit Date</label>
+        <textarea class="form-control" rows="4" placeholder="I'd like to visit on Wednesday..."></textarea>
+        
+        <button type="submit" class="btn" style="width: 100%;">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-flex">
+      <div>
+        <strong style="color:white; font-size: 1.1rem;">Rotary Club of San Jacinto</strong><br>
+        P.O. Box 1691 • San Jacinto, CA 92581
+      </div>
+      <div>
+        Rotary District 5330 • <a href="https://www.rotary.org" style="color:var(--accent)" target="_blank">Rotary International</a>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 Rotary Club of San Jacinto. Service Above Self.
+    </div>
+  </footer>
+
+</body>
+</html>
