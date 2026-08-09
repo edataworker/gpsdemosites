@@ -344,28 +344,25 @@ body {
     .speaker-name { font-weight: 700; color: var(--dark-text); font-size: 0.95rem; }
     .speaker-topic { font-size: 0.85rem; color: #718096; }
 
-    /* Four-Way Test */
-    .four-way-banner {
-      background: var(--rotary-blue);
-      color: var(--white);
-      padding: 2.5rem 0;
-      text-align: center;
-    }
-    .four-way-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
     .four-way-box {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 1.25rem;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .four-way-box span { font-size: 1.25rem; font-weight: 800; color: var(--rotary-gold); display: block; }
+  background: #FFFFFF;
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  border-left: 4px solid var(--rotary-gold); /* Rotary Gold left accent border */
+  color: #030303; /* Primary dark text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
 
-  /* Scottsdale Rotary Style Footer */
+.four-way-box span {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--rotary-blue); /* #00246C for crisp readability on white */
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+
 footer {
   background: #030303; /* Matches Scottsdale Rotary primary dark background */
   color: #FFFFFF;
