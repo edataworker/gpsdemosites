@@ -664,7 +664,16 @@
       </form>
     </div>
   </div>
-
+  <script>
+    function scrollHeroSlider(direction) {
+  const slider = document.getElementById('heroSlider');
+  const slideWidth = slider.clientWidth;
+  slider.scrollBy({
+    left: direction * slideWidth,
+    behavior: 'smooth'
+  });
+}
+</script>
   <script>
     function openModal() { document.getElementById('guestModal').classList.add('active'); }
     function closeModal() { document.getElementById('guestModal').classList.remove('active'); }
