@@ -344,30 +344,30 @@ body {
     .speaker-name { font-weight: 700; color: var(--dark-text); font-size: 0.95rem; }
     .speaker-topic { font-size: 0.85rem; color: #718096; }
 
-    .four-way-box {
+ .four-way-box {
   background: #FFFFFF;
   padding: 1.25rem;
   border-radius: 6px;
-  border: 1px solid #CBD5E1;
-  border-left: 4px solid var(--rotary-gold); /* Rotary Gold left accent border */
-  color: #030303; /* Primary dark text */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E2E8F0; /* Uniform light-grey border */
+  margin-bottom: 0.85rem;    /* Spacing between stacked cards */
+  color: #030303;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .four-way-box span {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--rotary-blue); /* #00246C for crisp readability on white */
+  color: #00246C;
   display: block;
   margin-bottom: 0.35rem;
 }
 
-
+/* Remove Gold Top Border from Footer */
 footer {
-  background: #030303; /* Matches Scottsdale Rotary primary dark background */
+  background: #030303;
   color: #FFFFFF;
   padding-top: 2.5rem;
-  border-top: 4px solid var(--rotary-gold);
+  border-top: 1px solid #334155; /* Subtle dark-grey divider instead of gold */
 }
 
 .footer-grid {
@@ -378,13 +378,13 @@ footer {
 }
 
 footer h5 {
-  color: var(--rotary-gold); /* Rotary Gold headings */
+  color: #FFFFFF;
   font-size: 1rem;
   margin-bottom: 0.85rem;
   font-family: 'Roboto Slab', serif;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid #334155; /* Neutral grey underline */
   padding-bottom: 0.4rem;
   display: inline-block;
 }
@@ -407,15 +407,15 @@ footer a:hover {
 }
 
 /* Light Sub-Footer Bar (Matches body canvas `#EBF3FA`) */
+
 .footer-bottom-bar {
   background: #EBF3FA;
   color: #030303;
   padding: 1.25rem 0;
   text-align: center;
   font-size: 0.825rem;
-  border-top: 1px solid #CBD5E1;
+  border-top: 1px solid #E2E8F0; /* Light grey border */
 }
-
 .footer-bottom-bar a {
   color: var(--rotary-royal);
   font-weight: 600;
