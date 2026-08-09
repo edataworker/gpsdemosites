@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rotary Club of San Jacinto • District 5330</title>
+
+http://googleusercontent.com/map_location_reference/1
+  <title>[Rotary Club of San Jacinto](http://googleusercontent.com/map_location_reference/0) • District 5330</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
@@ -14,6 +16,7 @@
       --card-bg: #FFFFFF;
       --nav-blue: #005DAB;         /* Royal blue header */
       --rotary-blue: #00246C;      /* Deep primary blue */
+      --rotary-gold: #F7A81B;      /* Rotary accent gold */
       --text-main: #2D3748;
       --border-grey: #CBD5E1;      
       --border-light: #E2E8F0;
@@ -62,7 +65,7 @@
     }
 
     .nav-logo-icon {
-      height: 30px;
+      height: 32px;
       width: auto;
       background: #FFFFFF;
       border-radius: 50%;
@@ -107,7 +110,7 @@
       font-weight: 600;
     }
 
-    /* Hero Collage Container - Strict Grid Fitting */
+    /* Hero Collage Container */
     .hero-collage-container {
       margin: 1rem auto;
     }
@@ -121,11 +124,11 @@
       border: 1px solid var(--border-grey);
       border-radius: 2px;
       height: 380px;
-      overflow: hidden; /* Fixes any inner overlay leakage */
+      overflow: hidden;
       box-sizing: border-box;
     }
 
-    /* Column 1 (Left: Title + Image 1) */
+    /* Column 1 (Left) */
     .hero-col-left {
       display: grid;
       grid-template-rows: 1fr 1fr;
@@ -134,14 +137,18 @@
       overflow: hidden;
     }
 
+    /* ENHANCED LOGO CARD (Client Feedback Applied) */
     .hero-title-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
+      background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+      border: 2px solid var(--rotary-blue);
+      border-top: 4px solid var(--rotary-gold);
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.85rem 1rem;
+      padding: 0.85rem 1.25rem;
       overflow: hidden;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .hero-title-text {
@@ -151,33 +158,38 @@
 
     .hero-title-text .title-top {
       color: var(--rotary-blue);
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.35rem;
+      font-weight: 700;
       line-height: 1.1;
+      letter-spacing: -0.2px;
     }
 
     .hero-title-text .title-main {
       font-family: 'Roboto Slab', serif;
       color: var(--rotary-blue);
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      line-height: 1;
+      line-height: 0.95;
+      text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
     }
 
     .hero-title-text .title-sub {
       color: var(--rotary-blue);
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.6rem;
+      font-weight: 700;
       line-height: 1.1;
     }
 
+    /* Increased Logo Size */
     .hero-title-logo {
-      height: 95px;
+      height: 125px;
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+      transition: transform 0.2s ease;
     }
 
-    /* Column 2 (Middle: Image 2 + Image 3) */
+    /* Column 2 (Middle) */
     .hero-col-middle {
       display: grid;
       grid-template-rows: 1fr 1fr;
@@ -201,7 +213,7 @@
       display: block;
     }
 
-    /* Column 3 (Right: Contained Hero Overlay Card) */
+    /* Column 3 (Right) */
     .hero-col-right {
       position: relative;
       height: 100%;
@@ -220,7 +232,7 @@
     .hero-overlay-text {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.2) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
       color: #FFFFFF;
       padding: 1.5rem;
       display: flex;
@@ -509,6 +521,8 @@
         
         <!-- Column 1 (Left) -->
         <div class="hero-col-left">
+          
+          <!-- Enhanced Logo & Header Card -->
           <div class="hero-title-card">
             <div class="hero-title-text">
               <span class="title-top">San Jacinto</span>
@@ -517,6 +531,7 @@
             </div>
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Emblem" class="hero-title-logo">
           </div>
+
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="San Jacinto Rotary Event">
           </div>
@@ -532,7 +547,7 @@
           </div>
         </div>
 
-        <!-- Column 3 (Right - Graveyard Image Removed, Cleanly Contained) -->
+        <!-- Column 3 (Right) -->
         <div class="hero-col-right">
           <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/725191326_1303740901874786_1147695780285326040_n.jpg" alt="Rotary Community Gathering">
           <div class="hero-overlay-text">
@@ -698,7 +713,7 @@
     </div>
 
     <div class="footer-subbar">
-      Powered by ClubRunner © 2002–2026. All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Cookie Policy</a>
+      Designed by <a href="edataworker.vercel.app">eDataWorker</a>All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Cookie Policy</a>
     </div>
   </footer>
 
