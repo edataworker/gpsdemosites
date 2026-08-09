@@ -67,9 +67,11 @@
     }
 
     .nav-logo-icon {
-      height: 60px;
+      height: 40px;
       width: auto;
-      
+      background: #FFFFFF;
+      border-radius: 50%;
+      padding: 2px;
     }
 
     .nav-links {
@@ -133,10 +135,8 @@
       gap: 1.25rem;
     }
 
-    .header-brand img {
-      height: 90px;
-      width: auto;
-    }
+    /* Top Wheel logo removed as requested */
+    /* .header-brand img { height: 90px; width: auto; } */
 
     .header-titles h1 {
       font-family: 'Roboto Slab', serif;
@@ -172,10 +172,11 @@
       color: #64748B;
     }
 
-    /* Main Content Layout (Scottsdale 2-Column Split) */
+    /* Main Content Layout - Correct 3-Column Body Structure */
     .content-grid {
       display: grid;
-      grid-template-columns: 1fr 360px;
+      /* Refactored into Left Sidebar + Main Content + Right Sidebar */
+      grid-template-columns: 300px 1fr 300px;
       gap: 1.75rem;
       margin-bottom: 2.5rem;
     }
@@ -411,6 +412,13 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
+    @media (max-width: 1200px) {
+      .content-grid {
+        grid-template-columns: 300px 1fr;
+      }
+      .sidebar-column-right { display: none; }
+    }
+
     @media (max-width: 992px) {
       .content-grid {
         grid-template-columns: 1fr;
@@ -423,6 +431,7 @@
       .header-meeting-badge {
         text-align: center;
       }
+      .sidebar-column-left { display: none; }
     }
   </style>
 </head>
@@ -431,8 +440,9 @@
   <!-- Top Blue Navigation Header -->
   <header class="top-nav-bar">
     <div class="container nav-container">
-      <!--<div class="nav-left">
-        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.png" alt="Rotary Wheel Logo" class="nav-logo-icon">-->
+      <div class="nav-left">
+        <!-- Use logo.png instead of logo.jpg -->
+        <img src="images/logo.png" alt="Rotary Wheel Logo" class="nav-logo-icon">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -454,7 +464,8 @@
   <div class="site-header">
     <div class="container header-content">
       <div class="header-brand">
-        <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Logo">
+        <!-- Top wheel logo removed as requested -->
+        <!-- <img src="images/logo.png" alt="Rotary Wheel Logo"> -->
         <div class="header-titles">
           <h1>Rotary Club of San Jacinto</h1>
           <p>Service Above Self • District 5330</p>
@@ -468,15 +479,35 @@
   </div>
 
   <div class="container">
-    <!-- Main 2-Column Content Layout -->
+    <!-- Main Content Layout - Correct 3-Column Structure -->
     <div class="content-grid">
       
-      <!-- Main Content Column -->
+      <!-- Column 1: Left Sidebar -->
+      <aside class="sidebar-column sidebar-column-left">
+        
+        <!-- Widget 1: Meeting Location -->
+        <div class="sidebar-widget">
+          <h4>Where We Meet</h4>
+          <p><strong>Emilio’s Mexican Restaurant</strong></p>
+          <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
+          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:00 PM</p>
+        </div>
+
+        <!-- Widget 2: Service Focus -->
+        <div class="sidebar-widget">
+          <h4>Community Service</h4>
+          <img src="images/youth.jpg" alt="Rotary Service Project">
+          <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
+        </div>
+
+      </aside>
+
+      <!-- Column 2: Main Content Column -->
       <main class="main-content-column">
         
         <!-- Hero Banner Box -->
         <div class="hero-banner-box">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/120184005_1297352380607534_590167538840298044_n.jpg" alt="San Jacinto Rotary Volunteers">
+          <img src="images/community.jpg" alt="San Jacinto Rotary Volunteers">
           <div class="hero-banner-caption">
             <h2>Making a Difference in San Jacinto</h2>
             <p>Connecting business leaders and community champions to serve local families and youth.</p>
@@ -511,44 +542,12 @@
           <p style="font-style: italic; color: #64748B; margin-bottom: 0;">- Rotary International Statement on DEI</p>
         </div>
 
-        <!-- Section 3: Upcoming Events -->
-        <div class="section-banner">Upcoming Club Programs & Meetings</div>
-        <div class="content-block">
-          <div class="event-item">
-            <a href="#" class="event-title">Weekly Luncheon Meeting & Keynote Speaker Presentation</a>
-            <div class="event-date">Wed, Aug 12, 2026 • 12:00 PM – 1:00 PM | Emilio's Mexican Restaurant</div>
-          </div>
-          <div class="event-item">
-            <a href="#" class="event-title">Student of the Month & Youth Leadership Awards</a>
-            <div class="event-date">Wed, Aug 19, 2026 • 12:00 PM – 1:00 PM | Emilio's Mexican Restaurant</div>
-          </div>
-          <div class="event-item">
-            <a href="#" class="event-title">District 5330 Governor Official Club Visit</a>
-            <div class="event-date">Wed, Sep 02, 2026 • 12:00 PM – 1:00 PM | Emilio's Mexican Restaurant</div>
-          </div>
-        </div>
-
       </main>
 
-      <!-- Sidebar Column -->
-      <aside class="sidebar-column">
+      <!-- Column 3: Right Sidebar -->
+      <aside class="sidebar-column sidebar-column-right">
         
-        <!-- Sidebar Widget 1: Meeting Location -->
-        <div class="sidebar-widget">
-          <h4>Where We Meet</h4>
-          <p><strong>Emilio’s Mexican Restaurant</strong></p>
-          <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
-          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:00 PM</p>
-        </div>
-
-        <!-- Sidebar Widget 2: Service Focus -->
-        <div class="sidebar-widget">
-          <h4>Community Service</h4>
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="Rotary Service Project">
-          <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
-        </div>
-
-        <!-- Sidebar Widget 3: Resources -->
+        <!-- Widget 3: Resources -->
         <div class="sidebar-widget">
           <h4>Quick Links</h4>
           <p style="margin-bottom: 0.65rem;">📘 <a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a></p>
@@ -557,7 +556,7 @@
           <p>🔄 <a href="#">Meeting Make-Up Options</a></p>
         </div>
 
-        <!-- Sidebar Widget 4: Calendar -->
+        <!-- Widget 4: Calendar -->
         <div class="sidebar-widget">
           <h4>August 2026</h4>
           <table class="calendar-table">
@@ -612,7 +611,7 @@
     </div>
 
     <div class="footer-subbar">
-      Designed by <a href="edataworker.vercel.app">eDataWorker </a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+      Designed by eDataWorker <edataworker.vercel.app> | © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
     </div>
   </footer>
 
