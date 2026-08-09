@@ -9,24 +9,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --rotary-blue: #00246C;
-      --rotary-royal: #005DAB;
-      --rotary-gold: #F7A81B;
-      --rotary-gold-dark: #D48A00;
-      --dark-text: #2D3748;
-      --light-bg: #F7FAFC;
-      --border-color: #E2E8F0;
-      --white: #FFFFFF;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+  --rotary-blue: #00246C;
+  --rotary-royal: #005DAB;
+  --rotary-gold: #F7A81B;
+  --dark-text: #2D3748;
+  
+  /* Update background variable to light whitish-blue */
+  --light-bg: #F0F4F8; 
+  --white: #FFFFFF;
+  --border-color: #E2E8F0;
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Open Sans', system-ui, sans-serif;
-      color: var(--dark-text);
-      background-color: #EDF2F7;
-      line-height: 1.6;
-    }
+body {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: var(--dark-text);
+  
+  /* Apply the new background color */
+  background-color: var(--light-bg); 
+  line-height: 1.6;
+}
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
 
@@ -315,7 +316,26 @@
     }
     .meeting-info-box strong { color: var(--rotary-blue); display: block; margin-top: 0.4rem; }
 
-    .speaker-item {
+    .speaker-item :root {
+  --rotary-blue: #00246C;
+  --rotary-royal: #005DAB;
+  --rotary-gold: #F7A81B;
+  --dark-text: #2D3748;
+  
+  /* Update background variable to light whitish-blue */
+  --light-bg: #F0F4F8; 
+  --white: #FFFFFF;
+  --border-color: #E2E8F0;
+}
+
+body {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: var(--dark-text);
+  
+  /* Apply the new background color */
+  background-color: var(--light-bg); 
+  line-height: 1.6;
+}
       padding: 0.75rem 0;
       border-bottom: 1px dashed var(--border-color);
     }
@@ -345,24 +365,56 @@
     }
     .four-way-box span { font-size: 1.25rem; font-weight: 800; color: var(--rotary-gold); display: block; }
 
-    /* Footer */
-    footer {
-      background: #1A202C;
-      color: #A0AEC0;
-      padding: 3rem 0 1.5rem;
-      font-size: 0.875rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    footer h5 { color: var(--white); font-size: 1rem; margin-bottom: 0.75rem; font-family: 'Roboto Slab', serif; }
-    footer a { color: #A0AEC0; text-decoration: none; }
-    footer a:hover { color: var(--rotary-gold); }
-    .copyright { text-align: center; border-top: 1px solid #2D3748; padding-top: 1.25rem; font-size: 0.8rem; }
+   /* Rotary Portal Footer */
+footer {
+  background: var(--rotary-blue); /* #00246C */
+  color: #CBD5E1;
+  padding-top: 3.5rem;
+  font-size: 0.875rem;
+  border-top: 4px solid var(--rotary-gold);
+}
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+footer h5 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-family: 'Roboto Slab', serif;
+  border-bottom: 2px solid rgba(247, 168, 27, 0.5); /* Gold underline */
+  padding-bottom: 0.3rem;
+  display: inline-block;
+}
+
+footer p {
+  line-height: 1.7;
+}
+
+footer a {
+  color: #E2E8F0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--rotary-gold);
+  text-decoration: underline;
+}
+
+/* Darker Navy Bottom Copyright Strip */
+.copyright-bar {
+  background: #001740;
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
     /* Modal */
     .modal {
       display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; align-items: center; justify-content: center; padding: 1rem;
@@ -616,30 +668,37 @@
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h5>Rotary Club of San Jacinto</h5>
-          <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
-          <p style="margin-top: 0.5rem;"><a href="mailto:peaches@sanjacintorotary.org">Contact Club Secretary</a></p>
-        </div>
-        <div>
-          <h5>Meeting Info</h5>
-          <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
-        </div>
-        <div>
-          <h5>Quick Links</h5>
-          <p><a href="gallery.html">Photo Gallery</a><br>
-          <a href="https://www.facebook.com/SJRotary" target="_blank">Facebook Page</a><br>
-          <a href="https://www.rotary.org" target="_blank">Rotary International</a></p>
-        </div>
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5>Rotary Club of San Jacinto</h5>
+        <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
+        <p style="margin-top: 0.5rem;">
+          <a href="mailto:peaches@sanjacintorotary.org">Contact Club Secretary</a>
+        </p>
       </div>
-      <div class="copyright">
-        © 2026 Rotary Club of San Jacinto • District 5330 • All Rights Reserved
+      <div>
+        <h5>Meeting Info</h5>
+        <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <p>
+          <a href="gallery.html">Photo Gallery</a><br>
+          <a href="https://www.facebook.com/SJRotary" target="_blank">Facebook Page</a><br>
+          <a href="https://www.rotary.org" target="_blank">Rotary International</a>
+        </p>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <div class="copyright-bar">
+    <div class="container">
+      © 2026 Rotary Club of San Jacinto • District 5330 • Service Above Self
+    </div>
+  </div>
+</footer>
 
   <!-- Modal -->
   <div class="modal" id="guestModal">
