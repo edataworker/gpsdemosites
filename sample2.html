@@ -10,14 +10,14 @@
   
   <style>
     :root {
-      --bg-canvas: #EBF3FA;        /* Light whitish-blue canvas */
+      --bg-canvas: #EBF3FA;        /* Light whitish-blue background */
       --card-bg: #FFFFFF;
       --nav-blue: #005DAB;         /* Royal blue header */
       --rotary-blue: #00246C;      /* Deep primary blue */
       --text-main: #2D3748;
-      --border-grey: #CBD5E1;      /* Light grey border */
+      --border-grey: #CBD5E1;      
       --border-light: #E2E8F0;
-      --section-header-bg: #EAECEE;/* Light grey section header bar */
+      --section-header-bg: #EAECEE;
     }
 
     * {
@@ -39,7 +39,7 @@
       padding: 0 1rem;
     }
 
-    /* Top Royal Blue Header & Navigation Bar */
+    /* Top Royal Blue Navigation Bar */
     .top-nav-bar {
       background: var(--nav-blue);
       color: #FFFFFF;
@@ -107,7 +107,7 @@
       font-weight: 600;
     }
 
-    /* Hero Banner Collage - Exact Screenshot Layout Match */
+    /* Hero Collage Container - Strict Grid Fitting */
     .hero-collage-container {
       margin: 1rem auto;
     }
@@ -121,14 +121,17 @@
       border: 1px solid var(--border-grey);
       border-radius: 2px;
       height: 380px;
+      overflow: hidden; /* Fixes any inner overlay leakage */
+      box-sizing: border-box;
     }
 
-    /* Left Column (Stack: Title Card + Image 1) */
+    /* Column 1 (Left: Title + Image 1) */
     .hero-col-left {
       display: grid;
       grid-template-rows: 1fr 1fr;
       gap: 10px;
       height: 100%;
+      overflow: hidden;
     }
 
     .hero-title-card {
@@ -138,6 +141,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.85rem 1rem;
+      overflow: hidden;
     }
 
     .hero-title-text {
@@ -168,25 +172,18 @@
     }
 
     .hero-title-logo {
-      height: 105px;
+      height: 95px;
       width: auto;
       object-fit: contain;
     }
 
-    /* Middle Column (Stack: Image 2 + Image 3) */
+    /* Column 2 (Middle: Image 2 + Image 3) */
     .hero-col-middle {
       display: grid;
       grid-template-rows: 1fr 1fr;
       gap: 10px;
       height: 100%;
-    }
-
-    /* Right Column (Full-Height Image 4 with Overlay) */
-    .hero-col-right {
-      position: relative;
-      height: 100%;
       overflow: hidden;
-      border: 1px solid var(--border-light);
     }
 
     .hero-img-box {
@@ -194,9 +191,25 @@
       height: 100%;
       overflow: hidden;
       border: 1px solid var(--border-light);
+      position: relative;
     }
 
-    .hero-img-box img,
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Column 3 (Right: Contained Hero Overlay Card) */
+    .hero-col-right {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+
     .hero-col-right img {
       width: 100%;
       height: 100%;
@@ -207,35 +220,37 @@
     .hero-overlay-text {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.25);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.2) 100%);
       color: #FFFFFF;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      z-index: 2;
     }
 
     .hero-overlay-text h2 {
       font-family: 'Roboto Slab', serif;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       line-height: 1.05;
       font-weight: 800;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
     .carousel-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.8);
       font-size: 2rem;
       user-select: none;
       cursor: pointer;
+      z-index: 3;
     }
     .carousel-arrow.left { left: 8px; }
     .carousel-arrow.right { right: 8px; }
 
-    /* Main Page 2-Column Content Grid */
+    /* Main Content Layout */
     .content-grid {
       display: grid;
       grid-template-columns: 1fr 310px;
@@ -243,7 +258,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Section Banner Headers */
     .section-banner {
       background: var(--section-header-bg);
       border: 1px solid var(--border-grey);
@@ -288,24 +302,7 @@
       text-decoration: underline;
     }
 
-    /* Four-Way Test Cards */
-    .four-way-box {
-      background: var(--card-bg);
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-      border: 1px solid var(--border-light);
-      margin-bottom: 0.5rem;
-      font-size: 0.875rem;
-    }
-
-    .four-way-box span {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--rotary-blue);
-      display: block;
-    }
-
-    /* Upcoming Events List */
+    /* Event Items */
     .event-item {
       padding-bottom: 0.75rem;
       margin-bottom: 0.75rem;
@@ -331,7 +328,7 @@
       color: #64748B;
     }
 
-    /* Club Info Box */
+    /* Club Info Container */
     .club-info-container {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -386,7 +383,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Calendar Widget Table */
     .calendar-table {
       width: 100%;
       border-collapse: collapse;
@@ -413,7 +409,7 @@
       border-radius: 2px;
     }
 
-    /* Footer Section */
+    /* Footer */
     footer {
       background: #030303;
       color: #94A3B8;
@@ -453,7 +449,6 @@
       font-size: 0.775rem;
     }
 
-    /* Floating Scroll Button */
     .scroll-top-btn {
       position: fixed;
       bottom: 1.5rem;
@@ -508,13 +503,12 @@
 
   <div class="container">
     
-    <!-- Hero Banner Collage Section (Matches Screenshot Grid Structure Exactly) -->
+    <!-- Hero Banner Collage Section -->
     <section class="hero-collage-container">
       <div class="hero-grid">
         
         <!-- Column 1 (Left) -->
         <div class="hero-col-left">
-          <!-- Top Box: Title Block with Text + Rotary Emblem -->
           <div class="hero-title-card">
             <div class="hero-title-text">
               <span class="title-top">San Jacinto</span>
@@ -523,7 +517,6 @@
             </div>
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/logo.jpg" alt="Rotary Wheel Emblem" class="hero-title-logo">
           </div>
-          <!-- Bottom Box: Image 1 -->
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/70840842_992153321127443_380086218941005824_n.jpg" alt="San Jacinto Rotary Event">
           </div>
@@ -531,20 +524,17 @@
 
         <!-- Column 2 (Middle) -->
         <div class="hero-col-middle">
-          <!-- Top Box: Image 2 -->
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/120184005_1297352380607534_590167538840298044_n.jpg" alt="San Jacinto Rotarians Community Project">
           </div>
-          <!-- Bottom Box: Image 3 -->
           <div class="hero-img-box">
             <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/475342995_929111552671058_8719820579238323804_n.jpg" alt="Rotary Volunteers">
           </div>
         </div>
 
-        <!-- Column 3 (Right) -->
-        <!-- Full-Height Box: Image 4 with Overlay Text & Arrows -->
+        <!-- Column 3 (Right - Graveyard Image Removed, Cleanly Contained) -->
         <div class="hero-col-right">
-          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/480910088_2439319626410798_1191579870285344681_n.jpg" alt="San Jacinto Valley Banner">
+          <img src="https://raw.githubusercontent.com/edataworker/gpsdemosites/main/images/725191326_1303740901874786_1147695780285326040_n.jpg" alt="Rotary Community Gathering">
           <div class="hero-overlay-text">
             <h2>Join Us<br>For Lunch.<br>Check Us<br>Out!</h2>
           </div>
@@ -712,7 +702,6 @@
     </div>
   </footer>
 
-  <!-- Floating Scroll To Top Button -->
   <a href="#" class="scroll-top-btn" aria-label="Scroll to top">▲</a>
 
 </body>
