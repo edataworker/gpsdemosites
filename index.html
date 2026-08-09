@@ -74,7 +74,7 @@
       object-fit: contain;
     }
 
-    nav ul { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    nav ul { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
     nav a {
       text-decoration: none;
       color: var(--dark);
@@ -193,7 +193,7 @@
     .card-body { padding: 1.5rem; }
     .card-body h3 { font-size: 1.25rem; color: var(--dark); margin-bottom: 0.5rem; }
 
-    /* Meeting Gallery Section */
+    /* Meeting & Event Gallery Section */
     .meeting-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -201,6 +201,17 @@
       align-items: center;
     }
     .meeting-grid img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover; }
+
+    /* Event Card Details */
+    .event-details-box {
+      background: var(--white);
+      padding: 2.25rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 6px solid var(--rotary-gold);
+    }
+    .event-list { display: flex; flex-direction: column; gap: 0.85rem; margin: 1.5rem 0; font-size: 0.95rem; }
+    .event-list-item { display: flex; align-items: flex-start; gap: 0.75rem; }
 
     /* Banner Graphic Section */
     .graphic-banner {
@@ -268,6 +279,7 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
+          <li><a href="#events">Events & Fundraisers</a></li>
           <li><a href="#projects">Local Projects</a></li>
           <li><a href="#meetings">Weekly Lunch</a></li>
           <li><a href="#fourway">Principles</a></li>
@@ -286,7 +298,7 @@
         <p>Connecting community leaders, celebrating public servants, and delivering hands-on relief to families in need.</p>
         <div class="hero-buttons">
           <button class="btn btn-gold" onclick="openModal()">RSVP for Wednesday Lunch</button>
-          <a href="#projects" class="btn btn-outline">Our Local Impact</a>
+          <a href="#events" class="btn btn-outline">Featured Fundraiser</a>
         </div>
       </div>
     </div>
@@ -320,6 +332,62 @@
       </div>
     </div>
   </div>
+
+  <!-- Featured Event Section -->
+  <section id="events" style="background: var(--light-bg);">
+    <div class="container">
+      <div class="section-header">
+        <span>Annual Community Fundraiser</span>
+        <h2>14th Annual "Peach of a Deal" Fundraiser</h2>
+        <p>Support local student literacy, college scholarships, and leadership camps by ordering fresh orchard fruit!</p>
+      </div>
+      <div class="meeting-grid">
+        <div>
+          <img src="images/546665956_1086965666885645_3916791274273331160_n.jpg" alt="14th Annual Peach of a Deal Fundraiser Flyer" style="width:100%; max-height: 580px; object-fit: contain; background: #fff; padding: 0.5rem;">
+        </div>
+        <div>
+          <div class="event-details-box">
+            <span class="badge" style="background: #FEF3C7; color: var(--dark); border-color: var(--rotary-gold);">Upcoming Event</span>
+            <h3 style="font-size: 1.6rem; color: var(--dark); margin: 0.5rem 0 1rem;">O'Henry Peaches & Honeycrisp Apples</h3>
+            <p>Freshly picked and trucked directly from the orchard! Your purchase directly provides books to San Jacinto students, grants college scholarships to high school graduates, and funds student Leadership Camp.</p>
+            
+            <div class="event-list">
+              <div class="event-list-item">
+                <span>💰</span>
+                <div><strong>Price:</strong> $25 per 11 lb. box (Peaches or Apples)</div>
+              </div>
+              <div class="event-list-item">
+                <span>⏰</span>
+                <div><strong>Final Day to Order:</strong> Sept. 4th</div>
+              </div>
+              <div class="event-list-item">
+                <span>🚚</span>
+                <div><strong>Pickup Date:</strong> Wednesday, Sept. 10th (4:00 PM – 5:30 PM)</div>
+              </div>
+              <div class="event-list-item">
+                <span>📍</span>
+                <div><strong>Pickup Location:</strong> SJUSD Central Kitchen, 221 Bissell Place</div>
+              </div>
+              <div class="event-list-item">
+                <span>📞</span>
+                <div><strong>Contact:</strong> Gale Hill at 929-7700 x 4202</div>
+              </div>
+              <div class="event-list-item">
+                <span>✉️</span>
+                <div><strong>Email Orders:</strong> <a href="mailto:peaches@sanjacintorotary.org" style="color:var(--rotary-azure); font-weight:700;">peaches@sanjacintorotary.org</a></div>
+              </div>
+            </div>
+
+            <div style="background: #F1F5F9; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.875rem;">
+              <strong>Payment Info:</strong> Pay through your local San Jacinto Rotarian or send advance payment via Venmo to <strong>@John-Norman-195</strong> (please include order details in the message field).
+            </div>
+
+            <a href="mailto:peaches@sanjacintorotary.org?subject=Peach%20and%20Apple%20Fundraiser%20Order" class="btn btn-gold" style="width: 100%; text-align: center;">Order Fresh Fruit Box</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about">
