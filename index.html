@@ -320,13 +320,55 @@
   </header>
 
   <!-- Hero Banner -->
-  <section class="hero-banner">
-    <div class="container">
-      <h2>People of Action in San Jacinto</h2>
-      <p>Connecting passionate community leaders, supporting local education, and delivering hands-on service across the Valley.</p>
-      <a href="javascript:void(0)" onclick="openModal()" class="btn-rsvp" style="padding: 0.8rem 1.8rem;">Join Us For Lunch</a>
+  
+<section class="hero-slider-container">
+  <button class="slider-arrow prev-arrow" onclick="scrollHeroSlider(-1)" aria-label="Previous Slide">&#10094;</button>
+  <button class="slider-arrow next-arrow" onclick="scrollHeroSlider(1)" aria-label="Next Slide">&#10095;</button>
+
+  <div class="hero-slider" id="heroSlider">
+    
+    <!-- Slide 1 -->
+    <div class="hero-slide">
+      <img src="images/82253708_1098398897169551_5110102529153171456_n.jpg" alt="San Jacinto Rotarians">
+      <div class="slide-caption">
+        <h2>People of Action in San Jacinto</h2>
+        <p>Connecting community leaders, supporting local education, and delivering hands-on service.</p>
+        <a href="javascript:void(0)" onclick="openModal()" class="btn-rsvp">Join Us For Lunch</a>
+      </div>
     </div>
-  </section>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img src="images/65373642_934327840243325_8509604238114947072_n.jpg" alt="Fellowship and Community">
+      <div class="slide-caption">
+        <h2>Service Above Self</h2>
+        <p>Building lasting friendships while serving the youth and families of the Valley.</p>
+        <a href="#about" class="btn-rsvp">Learn About Our Club</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img src="images/120184005_1297352380607534_590167538840298044_n.jpg" alt="Food and Relief Drives">
+      <div class="slide-caption">
+        <h2>Community Relief & Local Support</h2>
+        <p>Mobilizing essential food drives and local outreach programs year-round.</p>
+        <a href="#projects" class="btn-rsvp">View Recent Projects</a>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+      <img src="images/475342995_929111552671058_8719820579238323804_n.jpg" alt="Annual Civic Recognition">
+      <div class="slide-caption">
+        <h2>Honoring Local Community Heroes</h2>
+        <p>Recognizing teachers, first responders, and outstanding citizens at our annual awards night.</p>
+        <a href="gallery.html" class="btn-rsvp">View Photo Gallery</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Main Portal Layout -->
   <div class="container portal-body">
