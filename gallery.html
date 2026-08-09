@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Rotary Club of San Jacinto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rotary-blue: #00246C;
+      --rotary-azure: #005DAB;
+      --rotary-gold: #F7A81B;
+      --dark: #0F172A;
+      --slate: #334155;
+      --light-bg: #F8FAFC;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+      --radius: 12px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--slate);
+      background-color: var(--light-bg);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .brand img { height: 48px; width: auto; object-fit: contain; }
+
+    nav ul { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+    nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
+    nav a:hover { color: var(--rotary-azure); }
+
+    .btn {
+      display: inline-flex;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: var(--rotary-blue); color: var(--white); }
+
+    /* Page Banner */
+    .banner {
+      background: var(--rotary-blue);
+      color: var(--white);
+      padding: 3.5rem 0;
+      text-align: center;
+    }
+    .banner h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .banner p { color: #E2E8F0; font-size: 1.1rem; }
+
+    /* Gallery Section */
+    section { padding: 4rem 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-info {
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #64748B;
+      background: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Loading Spinner & Status */
+    .status-msg {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem;
+      font-size: 1.1rem;
+      color: var(--slate);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      color: var(--white);
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    footer { background: var(--dark); color: #94A3B8; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="images/239839563_1533160963693340_6917404426234147192_n.jpg" alt="Rotary Logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="gallery.html" style="color: var(--rotary-azure);">Gallery</a></li>
+        </ul>
+      </nav>
+      <a href="index.html" class="btn btn-primary">Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <h1>Photo & Community Gallery</h1>
+      <p>Exploring moments of fellowship, service, and community impact in San Jacinto</p>
+    </div>
+  </div>
+
+  <!-- Main Gallery Grid -->
+  <section>
+    <div class="container">
+      <div id="galleryGrid" class="gallery-grid">
+        <div class="status-msg">Loading images from repository...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Enlarged view">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 Rotary Club of San Jacinto • District 5330
+    </div>
+  </footer>
+
+  <!-- Dynamic Image Fetch Script -->
+  <script>
+    const REPO_OWNER = 'edataworker';
+    const REPO_NAME = 'gpsdemosites';
+    const FOLDER_PATH = 'images';
+
+    async function loadGalleryImages() {
+      const galleryGrid = document.getElementById('galleryGrid');
+      const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FOLDER_PATH}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const files = await response.json();
+
+        // Filter out non-image files
+        const imageExtensions = /\.(jpe?g|png|gif|webp|svg)$/i;
+        const imageFiles = files.filter(file => imageExtensions.test(file.name));
+
+        if (imageFiles.length === 0) {
+          galleryGrid.innerHTML = '<div class="status-msg">No images found in the folder.</div>';
+          return;
+        }
+
+        // Clear loading message
+        galleryGrid.innerHTML = '';
+
+        // Render each image dynamically
+        imageFiles.forEach(file => {
+          const relativePath = `images/${file.name}`;
+
+          const card = document.createElement('div');
+          card.className = 'gallery-card';
+          card.onclick = () => openLightbox(relativePath);
+
+          card.innerHTML = `
+            <img src="${relativePath}" alt="${file.name}" loading="lazy" onerror="this.onerror=null; this.src='${file.download_url}';">
+            <div class="gallery-info" title="${file.name}">${file.name}</div>
+          `;
+
+          galleryGrid.appendChild(card);
+        });
+
+      } catch (error) {
+        console.error('Failed to auto-fetch images from GitHub API:', error);
+        galleryGrid.innerHTML = `
+          <div class="status-msg" style="color: #EF4444;">
+            Unable to auto-load directory contents via GitHub API.<br>
+            <small style="color: #64748B;">Please ensure the repository is public and folder path is correct.</small>
+          </div>
+        `;
+      }
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', loadGalleryImages);
+  </script>
+</body>
+</html>
