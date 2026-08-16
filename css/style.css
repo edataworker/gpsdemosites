@@ -142,6 +142,46 @@ nav.main-nav > ul > li.active > a {
   color: var(--white);
 }
 
+nav.main-nav li.has-children > a::after {
+  content: "\25BE";
+  font-size: 0.65em;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+nav.main-nav .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  display: none;
+  z-index: 60;
+}
+nav.main-nav li.has-children:hover > .sub-menu,
+nav.main-nav li.has-children:focus-within > .sub-menu {
+  display: block;
+}
+nav.main-nav .sub-menu li { margin: 0; }
+nav.main-nav .sub-menu a {
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--navy);
+  border-radius: 6px;
+}
+nav.main-nav .sub-menu a:hover {
+  background: var(--cream);
+  color: var(--azure);
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -497,6 +537,16 @@ footer.site-footer {
   nav.main-nav.open { display: block; }
   nav.main-nav ul { flex-direction: column; padding: 10px; gap: 2px; }
   nav.main-nav a { padding: 12px 14px; }
+  nav.main-nav li.has-children > a::after { float: right; }
+  nav.main-nav .sub-menu {
+    position: static;
+    display: block;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 16px;
+    background: transparent;
+  }
+  nav.main-nav .sub-menu a { padding: 10px 14px; color: var(--slate); }
   .nav-toggle { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; }
   .topbar-links span.hide-mobile { display: none; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
