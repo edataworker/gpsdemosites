@@ -40,7 +40,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li class="has-children">
-          <a href="about.html">About Our Club</a>
+          <a href="about.html" class="dropdown-toggle" aria-expanded="false">About Our Club <span class="arrow"></span></a>
           <ul class="sub-menu">
             <li><a href="leadership.html">Leadership</a></li>
             <li><a href="member-directory.html">Member Directory</a></li>
@@ -49,7 +49,7 @@
           </ul>
         </li>
         <li class="has-children">
-          <a href="district.html">District Links</a>
+          <a href="district.html" class="dropdown-toggle" aria-expanded="false">District Links <span class="arrow"></span></a>
           <ul class="sub-menu">
             <li><a href="district-leaders.html">District Leaders</a></li>
             <li><a href="https://www.district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
@@ -58,13 +58,13 @@
           </ul>
         </li>
         <li class="has-children">
-          <a href="about-rotary.html">About Rotary</a>
+          <a href="about-rotary.html" class="dropdown-toggle" aria-expanded="false">About Rotary <span class="arrow"></span></a>
           <ul class="sub-menu">
             <li><a href="guiding-principles.html">Guiding Principles</a></li>
           </ul>
         </li>
         <li class="has-children">
-          <a href="events.html">Events</a>
+          <a href="events.html" class="dropdown-toggle" aria-expanded="false">Events <span class="arrow"></span></a>
           <ul class="sub-menu">
             <li><a href="https://tinseltriathlon.com/" target="_blank" rel="noopener">Tinsel Triathlon</a></li>
             <li><a href="https://convention.rotary.org/en-us/" target="_blank" rel="noopener">RI Convention Taipei-Taiwan</a></li>
@@ -75,161 +75,103 @@
     </nav>
   </div>
 </header>
-  <!-- Site Header Banner -->
-  <div class="site-header">
-    <div class="container header-content">
-      <div class="header-brand">
-        <div class="header-titles">
-          <h1>Rotary Club of San Jacinto</h1>
-          <p>Service Above Self • District 5330</p>
+
+<div class="container">
+  <div class="content-grid">
+    <aside class="sidebar-column sidebar-column-left">
+      <div class="sidebar-widget">
+        <h4>Where We Meet</h4>
+        <p><strong>Emilio’s Mexican Restaurant</strong></p>
+        <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
+        <p style="margin-top: 0.5rem; font-weight: 600; color: var(--azure);">Wednesdays at 12:15 PM</p>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>Community Service</h4>
+        <img src="images/youth.jpg" alt="Rotary Service Project">
+        <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
+      </div>
+    </aside>
+
+    <main class="main-content-column">
+      <div class="hero-banner-box">
+        <img src="images/community.jpg" alt="San Jacinto Rotary Volunteers">
+        <div class="hero-banner-caption">
+          <h2>Making a Difference in San Jacinto</h2>
+          <p>Connecting business leaders and community champions to serve local families and youth.</p>
         </div>
       </div>
-      <div class="header-meeting-badge">
-        <strong>Weekly Luncheon Meetings</strong>
-        <span>Wednesdays at 12:00 PM • Emilio’s Mexican Restaurant</span>
+
+      <div class="section-banner">Welcome to San Jacinto Rotary</div>
+      <div class="content-block">
+        <h2>Service Above Self Since 1922</h2>
+        <p>Rotary International is a global network of 1.4 million neighbors, friends, leaders, and problem-solvers who see a world where people unite and take action to create lasting change across the globe, in our communities, and in ourselves.</p>
+        <p>The Rotary Club of San Jacinto brings together dedicated individuals who are passionate about improving lives in the San Jacinto Valley. Through local literacy projects, youth scholarships, food distribution, and community support, our members actively serve with purpose and camaraderie.</p>
+        <p>We invite you to join us for lunch as a guest and experience firsthand how Rotary brings good people together for great causes!</p>
+        <p style="margin-top: 1.25rem;">
+          <strong>Guest Contact:</strong> Peaches — Club Secretary | 
+          <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a>
+        </p>
       </div>
+
+      <div class="section-banner">Diversity, Equity, and Inclusion</div>
+      <div class="content-block">
+        <p style="font-weight: 600; color: var(--azure); font-size: 1.1rem; line-height: 1.7;">
+          At Rotary, we understand that cultivating a diverse, equitable, and inclusive environment is essential to realizing our vision of a world where people unite and take action to create lasting change.
+        </p>
+        <p style="font-style: italic; color: #64748B; margin-bottom: 0;">- Rotary International Statement on DEI</p>
+      </div>
+    </main>
+
+    <aside class="sidebar-column sidebar-column-right">
+      <div class="sidebar-widget">
+        <h4>Quick Links</h4>
+        <p style="margin-bottom: 0.65rem;">📘 <a href="https://www.facebook.com/SJRotary/" target="_blank" rel="noopener">Official Facebook Page</a></p>
+        <p style="margin-bottom: 0.65rem;">🌐 <a href="https://www.rotary.org" target="_blank" rel="noopener">Rotary International</a></p>
+        <p style="margin-bottom: 0.65rem;">📍 <a href="https://rotary5330.org" target="_blank" rel="noopener">District 5330 Website</a></p>
+        <p>🔄 <a href="#">Meeting Make-Up Options</a></p>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>August 2026</h4>
+        <table class="calendar-table">
+          <thead>
+            <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+            <tr><td>2</td><td>3</td><td>4</td><td class="active-day">5</td><td>6</td><td>7</td><td>8</td></tr>
+            <tr><td>9</td><td>10</td><td>11</td><td class="active-day">12</td><td>13</td><td>14</td><td>15</td></tr>
+            <tr><td>16</td><td>17</td><td>18</td><td class="active-day">19</td><td>20</td><td>21</td><td>22</td></tr>
+            <tr><td>23</td><td>24</td><td>25</td><td class="active-day">26</td><td>27</td><td>28</td><td>29</td></tr>
+            <tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Rotary Club of San Jacinto</h4>
+      <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
+    </div>
+    <div>
+      <h4>Meeting Location</h4>
+      <p>Wednesdays at 12:15 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <p><a href="https://www.facebook.com/SJRotary/" target="_blank" rel="noopener">Official Facebook Page</a><br><a href="mailto:peaches@sanjacintorotary.org">Email Club Secretary</a></p>
     </div>
   </div>
-
-  <div class="container">
-    <!-- Main Content Layout - Correct 3-Column Structure -->
-    <div class="content-grid">
-      
-      <!-- Column 1: Left Sidebar -->
-      <aside class="sidebar-column sidebar-column-left">
-        
-        <!-- Widget 1: Meeting Location -->
-        <div class="sidebar-widget">
-          <h4>Where We Meet</h4>
-          <p><strong>Emilio’s Mexican Restaurant</strong></p>
-          <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
-          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:00 PM</p>
-        </div>
-
-        <!-- Widget 2: Service Focus -->
-        <div class="sidebar-widget">
-          <h4>Community Service</h4>
-          <img src="images/youth.jpg" alt="Rotary Service Project">
-          <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
-        </div>
-
-      </aside>
-
-      <!-- Column 2: Main Content Column -->
-      <main class="main-content-column">
-        
-        <!-- Hero Banner Box -->
-        <div class="hero-banner-box">
-          <img src="images/community.jpg" alt="San Jacinto Rotary Volunteers">
-          <div class="hero-banner-caption">
-            <h2>Making a Difference in San Jacinto</h2>
-            <p>Connecting business leaders and community champions to serve local families and youth.</p>
-          </div>
-        </div>
-
-        <!-- Section 1: Welcome -->
-        <div class="section-banner">Welcome to San Jacinto Rotary</div>
-        <div class="content-block">
-          <h2>Service Above Self Since 1922</h2>
-          <p>
-            Rotary International is a global network of 1.4 million neighbors, friends, leaders, and problem-solvers who see a world where people unite and take action to create lasting change across the globe, in our communities, and in ourselves.
-          </p>
-          <p>
-            The Rotary Club of San Jacinto brings together dedicated individuals who are passionate about improving lives in the San Jacinto Valley. Through local literacy projects, youth scholarships, food distribution, and community support, our members actively serve with purpose and camaraderie.
-          </p>
-          <p>
-            We invite you to join us for lunch as a guest and experience firsthand how Rotary brings good people together for great causes!
-          </p>
-          <p style="margin-top: 1.25rem;">
-            <strong>Guest Contact:</strong> Peaches — Club Secretary | 
-            <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a>
-          </p>
-        </div>
-
-        <!-- Section 2: Diversity Policy -->
-        <div class="section-banner">Diversity, Equity, and Inclusion</div>
-        <div class="content-block">
-          <p style="font-weight: 600; color: var(--rotary-blue); font-size: 1.1rem; line-height: 1.7;">
-            At Rotary, we understand that cultivating a diverse, equitable, and inclusive environment is essential to realizing our vision of a world where people unite and take action to create lasting change.
-          </p>
-          <p style="font-style: italic; color: #64748B; margin-bottom: 0;">- Rotary International Statement on DEI</p>
-        </div>
-
-      </main>
-
-      <!-- Column 3: Right Sidebar -->
-      <aside class="sidebar-column sidebar-column-right">
-        
-        <!-- Widget 3: Resources -->
-        <div class="sidebar-widget">
-          <h4>Quick Links</h4>
-          <p style="margin-bottom: 0.65rem;">📘 <a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a></p>
-          <p style="margin-bottom: 0.65rem;">🌐 <a href="https://www.rotary.org" target="_blank">Rotary International</a></p>
-          <p style="margin-bottom: 0.65rem;">📍 <a href="https://rotary5330.org" target="_blank">District 5330 Website</a></p>
-          <p>🔄 <a href="#">Meeting Make-Up Options</a></p>
-        </div>
-
-        <!-- Widget 4: Calendar -->
-        <div class="sidebar-widget">
-          <h4>August 2026</h4>
-          <table class="calendar-table">
-            <thead>
-              <tr>
-                <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
-              </tr>
-              <tr>
-                <td>2</td><td>3</td><td>4</td><td class="active-day">5</td><td>6</td><td>7</td><td>8</td>
-              </tr>
-              <tr>
-                <td>9</td><td>10</td><td>11</td><td class="active-day">12</td><td>13</td><td>14</td><td>15</td>
-              </tr>
-              <tr>
-                <td>16</td><td>17</td><td>18</td><td class="active-day">19</td><td>20</td><td>21</td><td>22</td>
-              </tr>
-              <tr>
-                <td>23</td><td>24</td><td>25</td><td class="active-day">26</td><td>27</td><td>28</td><td>29</td>
-              </tr>
-              <tr>
-                <td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </aside>
-
-    </div>
+  <div class="footer-bottom container">
+    <span>&copy; 2026 Rotary Club of San Jacinto &middot; District 5330</span>
   </div>
+</footer>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div>
-        <h5>Rotary Club of San Jacinto</h5>
-        <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
-      </div>
-      <div>
-        <h5>Meeting Location</h5>
-        <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <p><a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a><br><a href="mailto:peaches@sanjacintorotary.org">Email Club Secretary</a></p>
-      </div>
-    </div>
-
-    <div class="footer-subbar">
-    © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-    <div align=center><a href='https://www.counter12.com'><img src='https://www.counter12.com/img-c2zD3zW9wYbCwdDC-8.gif' border='0' alt='counter'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=c2zD3zW9wYbCwdDC'></script></div>
-    </div>
-  </footer>
-
-  <a href="#" class="scroll-top-btn" aria-label="Scroll to top">▲</a>
-
+<script src="js/script.js"></script>
 </body>
 </html>
