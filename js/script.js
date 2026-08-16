@@ -1,20 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".main-nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("open");
-      var expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-    });
-  }
+/* Mobile nav toggle */
+const toggle = document.querySelector('.hemet-nav-toggle');
+const nav = document.querySelector('.hemet-main-nav');
 
-  // Highlight current page in nav
-  var path = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll(".main-nav > ul > li > a").forEach(function (link) {
-    var href = link.getAttribute("href");
-    if (href === path) {
-      link.parentElement.classList.add("active");
-    }
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
   });
-});
+
+  // Close nav when clicking a link (mobile)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
