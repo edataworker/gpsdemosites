@@ -1,443 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rotary Club of San Jacinto • District 5330</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      /* Soft gradient background matching Rotary civic aesthetic */
-      --bg-canvas: #EBF3FA;
-      --card-bg: #FFFFFF;
-      --nav-blue: #005DAB;         /* Royal Blue Header */
-      --rotary-blue: #00246C;      /* Deep Primary Rotary Blue */
-      --rotary-gold: #F7A81B;      /* Rotary Accent Gold */
-      --text-main: #2D3748;
-      --border-grey: #CBD5E1;      
-      --border-light: #E2E8F0;
-      --section-header-bg: #EAECEE;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(180deg, #E2ECF7 0%, #EEF4FA 35%, #F4F7FB 100%);
-      background-attachment: fixed;
-      color: var(--text-main);
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    /* Expanded container max-width to fill canvas space */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Top Royal Blue Navigation Bar */
-    .top-nav-bar {
-      background: var(--nav-blue);
-      color: #FFFFFF;
-      padding: 0.75rem 0;
-      border-bottom: 2px solid #004580;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-
-    .nav-logo-icon {
-      height: 60px;
-      width: auto;
-      background: #FFFFFF;
-      /*border-radius: 50%;
-      padding: 2px;*/
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    /* Navigation Menu Links */
-    .nav-links a {
-      font-family: 'Roboto Slab', serif;
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-      color: var(--rotary-gold);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-/*    .search-input {
-      padding: 0.4rem 0.75rem;
-      border: 1px solid var(--border-grey);
-      border-radius: 3px;
-      font-size: 1rem;
-      width: 160px;
-    }
-
-    .member-login-link {
-      color: #FFFFFF;
-      font-size: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-*/
-    /* Header */
-    .site-header {
-      background: #FFFFFF;
-      border-bottom: 3px solid var(--rotary-gold);
-      padding: 1.25rem 0;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    
-    .header-titles h1 {
-      font-family: 'Roboto Slab', serif;
-      color: var(--rotary-blue);
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .header-titles p {
-      color: #475569;
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-
-    .header-meeting-badge {
-      background: #F8FAFC;
-      border: 1px solid var(--border-grey);
-      border-left: 4px solid var(--nav-blue);
-      padding: 0.75rem 1.25rem;
-      border-radius: 4px;
-      text-align: right;
-    }
-
-    .header-meeting-badge strong {
-      color: var(--rotary-blue);
-      font-size: 1.05rem;
-      display: block;
-    }
-
-    .header-meeting-badge span {
-      font-size: 0.95rem;
-      color: #64748B;
-    }
-
-    /* Main Content Layout - 3-Column Body Structure */
-    .content-grid {
-      display: grid;
-      /* Refactored into Left Sidebar + Main Content + Right Sidebar */
-      grid-template-columns: 300px 1fr 300px;
-      gap: 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-banner {
-      background: var(--section-header-bg);
-      border: 1px solid var(--border-grey);
-      color: var(--rotary-blue);
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 0.75rem 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 1.25rem;
-      border-left: 5px solid var(--rotary-gold);
-    }
-
-    .content-block {
-      background: var(--card-bg);
-      border: 1px solid var(--border-grey);
-      border-radius: 4px;
-      padding: 1.75rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 6px rgba(0, 36, 108, 0.05);
-    }
-
-    .content-block h2 {
-      color: var(--rotary-blue);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      font-family: 'Roboto Slab', serif;
-    }
-
-    .content-block h3 {
-      color: var(--rotary-blue);
-      font-size: 1.35rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .content-block p {
-      font-size: 1.05rem;
-      color: var(--text-main);
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .content-block a {
-      color: var(--nav-blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .content-block a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hero */
-    .hero-banner-box {
-      position: relative;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 1.75rem;
-      border: 1px solid var(--border-grey);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .hero-banner-box img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-banner-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 36, 108, 0.88) 100%);
-      color: #FFFFFF;
-      padding: 1.5rem 1.75rem 1.25rem;
-    }
-
-    .hero-banner-caption h2 {
-      color: #FFFFFF;
-      font-size: 1.85rem;
-      margin-bottom: 0.35rem;
-      font-family: 'Roboto Slab', serif;
-    }
-
-    .hero-banner-caption p {
-      color: #E2E8F0;
-      font-size: 1.1rem;
-      margin-bottom: 0;
-    }
-
-    /* Event Items */
-    .event-item {
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px dashed var(--border-light);
-    }
-
-    .event-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .event-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--nav-blue);
-      text-decoration: none;
-      display: block;
-    }
-
-    .event-date {
-      font-size: 0.95rem;
-      color: #64748B;
-      margin-top: 0.2rem;
-    }
-
-    /* Sidebar Widgets */
-    .sidebar-widget {
-      background: var(--card-bg);
-      border: 1px solid var(--border-grey);
-      border-radius: 4px;
-      padding: 1.5rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 6px rgba(0, 36, 108, 0.05);
-    }
-
-    .sidebar-widget h4 {
-      color: var(--rotary-blue);
-      font-size: 1.2rem;
-      margin-bottom: 0.85rem;
-      border-bottom: 2px solid var(--rotary-gold);
-      padding-bottom: 0.4rem;
-    }
-
-    .sidebar-widget img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 3px;
-      margin-bottom: 0.85rem;
-    }
-
-    .calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-
-    .calendar-table th {
-      color: var(--rotary-blue);
-      padding: 0.5rem 0;
-      font-weight: 700;
-    }
-
-    .calendar-table td {
-      padding: 0.5rem 0;
-      color: var(--text-main);
-    }
-
-    .calendar-table td.active-day {
-      border: 1px solid var(--nav-blue);
-      background: #E0F2FE;
-      color: var(--nav-blue);
-      font-weight: 700;
-      border-radius: 3px;
-    }
-
-    /* Footer */
-    footer {
-      background: #030303;
-      color: #94A3B8;
-      font-size: 0.95rem;
-      padding-top: 2.25rem;
-      border-top: 2px solid var(--rotary-gold);
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      padding-bottom: 2.25rem;
-    }
-
-    footer h5 {
-      color: #FFFFFF;
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-    }
-
-    footer a {
-      color: #CBD5E1;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-      color: var(--rotary-gold);
-    }
-
-    .footer-subbar {
-      background: #000000;
-      color: #64748B;
-      text-align: center;
-      padding: 1.15rem 0;
-      border-top: 1px solid #1E293B;
-      font-size: 0.9rem;
-    }
-
-    .scroll-top-btn {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: #BAE6FD;
-      color: var(--nav-blue);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: bold;
-      border: 1px solid #7DD3FC;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    @media (max-width: 1200px) {
-      .content-grid {
-        grid-template-columns: 300px 1fr;
-      }
-      .sidebar-column-right { display: none; }
-    }
-
-    @media (max-width: 992px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-      }
-      .header-meeting-badge {
-        text-align: center;
-      }
-      .sidebar-column-left { display: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Jacinto Rotary Club | People of Action</title>
+<meta name="description" content="San Jacinto Rotary Club — Service Above Self in the San Jacinto Valley since 1954. Weekly meetings, scholarships, the Peach of a Deal fundraiser, and community service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header class="site-header">
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-links">
+      <span>Weekly Meetings: Wednesdays, 12:15 PM</span>
+      <span class="hide-mobile">|</span>
+      <span class="hide-mobile">Emilio's Restaurant, San Jacinto, CA</span>
+    </div>
+    <div class="topbar-social">
+      <a href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener" aria-label="San Jacinto Rotary on Facebook">f</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
   <div class="header-inner">
     <a class="brand" href="index.html">
       <img src="images/logo.jpg" alt="San Jacinto Rotary Club logo">
@@ -446,43 +33,43 @@
         <span class="club-sub">People of Action &middot; District 5330</span>
       </span>
     </a>
-    
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
-    <nav class="main-nav" aria-label="Primary Navigation">
+    <nav class="main-nav" aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
-        
-        <li class="has-dropdown">
-          <a href="about.html" class="dropdown-toggle" aria-expanded="false">About Us <span class="arrow"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="about.html">About Our Club</a></li>
-            <li><a href="about.html#leadership">Board &amp; Leadership</a></li>
-            <li><a href="about.html#history">Club History</a></li>
-            <li><a href="district.html">District 5330</a></li>
+        <li class="has-children">
+          <a href="about.html">About Our Club</a>
+          <ul class="sub-menu">
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="member-directory.html">Member Directory</a></li>
+            <li><a href="birthdays.html">Birthdays</a></li>
+            <li><a href="club-committees.html">Club Committees</a></li>
           </ul>
         </li>
-
-        <li class="has-dropdown">
-          <a href="#peaches" class="dropdown-toggle" aria-expanded="false">What We Do <span class="arrow"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#peaches">Peach &amp; Apple Fundraiser</a></li>
-            <li><a href="#projects">Community Projects</a></li>
-            <li><a href="#youth">Youth &amp; Scholarships</a></li>
+        <li class="has-children">
+          <a href="district.html">District Links</a>
+          <ul class="sub-menu">
+            <li><a href="district-leaders.html">District Leaders</a></li>
+            <li><a href="https://www.district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
+            <li><a href="https://district5330.org/" target="_blank" rel="noopener">District 5330</a></li>
+            <li><a href="https://district5330.org/our-blog/" target="_blank" rel="noopener">District Blog</a></li>
           </ul>
         </li>
-
-        <li class="has-dropdown">
-          <a href="contact.html" class="dropdown-toggle" aria-expanded="false">Get Involved <span class="arrow"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="contact.html">Join a Meeting</a></li>
-            <li><a href="contact.html#membership">Become a Member</a></li>
-            <li><a href="mailto:sanjacintorotary@gmail.com">Donate &amp; Support</a></li>
+        <li class="has-children">
+          <a href="about-rotary.html">About Rotary</a>
+          <ul class="sub-menu">
+            <li><a href="guiding-principles.html">Guiding Principles</a></li>
           </ul>
         </li>
-
+        <li class="has-children">
+          <a href="events.html">Events</a>
+          <ul class="sub-menu">
+            <li><a href="https://tinseltriathlon.com/" target="_blank" rel="noopener">Tinsel Triathlon</a></li>
+            <li><a href="https://convention.rotary.org/en-us/" target="_blank" rel="noopener">RI Convention Taipei-Taiwan</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
