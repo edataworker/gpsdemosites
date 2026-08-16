@@ -111,31 +111,47 @@ img { max-width: 100%; display: block; }
   padding: 14px 24px;
   gap: 20px;
 }
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .brand img { height: 58px; width: auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-text .club-name { font-family: "Poppins", sans-serif; font-weight: 700; color: var(--navy); font-size: 1.15rem; }
 .brand-text .club-sub { font-size: 0.78rem; color: var(--azure); letter-spacing: 0.06em; text-transform: uppercase; }
 
+/* Main navigation - horizontal layout */
+nav.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 nav.main-nav ul {
   list-style: none;
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 4px;
   margin: 0;
   padding: 0;
 }
-nav.main-nav > ul > li { position: relative; }
+
+nav.main-nav > ul > li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
 nav.main-nav a {
   display: block;
   padding: 10px 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   letter-spacing: 0.02em;
   color: var(--navy);
   border-radius: 6px;
   text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
 }
+
 nav.main-nav > ul > li > a:hover,
 nav.main-nav > ul > li.active > a {
   background: var(--azure);
@@ -148,6 +164,7 @@ nav.main-nav li.has-children > a::after {
   font-size: 0.65em;
   margin-left: 5px;
   vertical-align: middle;
+  display: inline-block;
 }
 
 nav.main-nav .sub-menu {
@@ -157,32 +174,39 @@ nav.main-nav .sub-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 210px;
+  min-width: 220px;
   background: var(--white);
   border-radius: 8px;
   box-shadow: var(--shadow);
   border: 1px solid var(--line);
   display: none;
   z-index: 60;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 nav.main-nav li.has-children:hover > .sub-menu,
 nav.main-nav li.has-children:focus-within > .sub-menu {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-nav.main-nav .sub-menu li { 
-  margin: 0; 
+nav.main-nav .sub-menu li {
+  margin: 0;
+  display: block;
 }
 
 nav.main-nav .sub-menu a {
   padding: 9px 12px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-transform: none;
   letter-spacing: normal;
   color: var(--navy);
   border-radius: 6px;
+  white-space: nowrap;
 }
 
 nav.main-nav .sub-menu a:hover {
@@ -197,6 +221,7 @@ nav.main-nav .sub-menu a:hover {
   border-radius: 6px;
   padding: 8px 10px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 .nav-toggle span {
   display: block;
@@ -530,6 +555,13 @@ footer.site-footer {
 .footer-bottom a { color: #cfd9ea; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  nav.main-nav a {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+}
+
 @media (max-width: 960px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -543,6 +575,7 @@ footer.site-footer {
 @media (max-width: 760px) {
   /* Mobile navigation */
   nav.main-nav { 
+    display: none;
     position: absolute; 
     top: 100%; 
     left: 0; 
@@ -550,11 +583,12 @@ footer.site-footer {
     background: #fff; 
     border-bottom: 1px solid var(--line); 
     box-shadow: var(--shadow); 
-    display: none; 
     max-height: 80vh;
     overflow-y: auto;
   }
-  nav.main-nav.open { display: block; }
+  nav.main-nav.open { 
+    display: block; 
+  }
   nav.main-nav ul { 
     flex-direction: column; 
     padding: 10px; 
@@ -562,9 +596,11 @@ footer.site-footer {
   }
   nav.main-nav > ul > li { 
     position: static; 
+    display: block;
   }
   nav.main-nav a { 
     padding: 12px 14px; 
+    font-size: 0.92rem;
   }
   
   /* Mobile sub-menu styles */
@@ -580,12 +616,15 @@ footer.site-footer {
     border: none;
     padding: 0 0 0 16px;
     background: transparent;
+    opacity: 1;
+    transform: none;
   }
   
   nav.main-nav .sub-menu a {
     padding: 10px 14px;
     color: var(--slate);
     font-size: 0.85rem;
+    white-space: normal;
   }
   
   nav.main-nav .sub-menu a:hover {
