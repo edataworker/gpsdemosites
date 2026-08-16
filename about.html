@@ -103,6 +103,46 @@
     </div>
   </div>
 </section>
+<!-- Gallery Section -->
+<section class="section-alt" id="club-gallery">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 30px;">
+      <span class="eyebrow" style="display:inline-block; color:#ffc72c; background:#002452; padding:4px 12px; border-radius:999px; font-family:'Poppins',sans-serif; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; margin-bottom:12px;">Photos</span>
+      <h2>Our Club in Action</h2>
+      <p>A look at our recent community projects, weekly meetings, and events.</p>
+    </div>
+
+    <!-- Container where images load -->
+    <div id="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;"></div>
+  </div>
+</section>
+
+<!-- Gallery Loader Script -->
+<script>
+  // Add the filenames of images stored in your /images folder
+  const galleryImages = [
+    { src: 'images/banner.png', title: 'Club Members' },
+    { src: 'images/logo.jpg', title: 'Rotary Emblem' }
+    // Add additional filenames here: 'images/photo1.jpg', 'images/photo2.jpg', etc.
+  ];
+
+  const galleryGrid = document.getElementById('gallery-grid');
+
+  galleryImages.forEach(img => {
+    const card = document.createElement('div');
+    card.className = 'card gallery-card';
+    card.style.cssText = 'overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);';
+    
+    card.innerHTML = `
+      <img src="${img.src}" alt="${img.title}" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy">
+      <div style="padding: 12px 15px;">
+        <h4 style="margin: 0; font-size: 0.95rem; color: #002452;">${img.title}</h4>
+      </div>
+    `;
+    
+    galleryGrid.appendChild(card);
+  });
+</script>
 
 <footer class="site-footer">
   <div class="container">
