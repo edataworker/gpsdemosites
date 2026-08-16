@@ -1,231 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | San Jacinto Rotary Club</title>
-<meta name="description" content="Contact San Jacinto Rotary Club to learn about membership, order Peach of a Deal fundraiser boxes, or ask about our community programs.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Club | Rotary Club of San Jacinto</title>
+  <meta name="description" content="Learn about San Jacinto Rotary Club — chartered around 1954, part of Rotary International District 5330, dedicated to Service Above Self in the San Jacinto Valley.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+<base target="_blank">
 </head>
 <body>
-
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-links">
-      <span>Weekly Meetings: Wednesdays, 12:15 PM</span>
-      <span class="hide-mobile">|</span>
-      <span class="hide-mobile">Emilio's Restaurant, San Jacinto, CA</span>
-    </div>
-    <div class="topbar-social">
-      <a href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener" aria-label="San Jacinto Rotary on Facebook">f</a>
+  <!-- ====== HEMET-STYLE TOP BAR ====== -->
+  <div class="hemet-topbar">
+    <div class="container hemet-topbar-inner">
+      <span class="hemet-topbar-text">Weekly Meetings: Wednesdays, 12:15 PM at Emilio's Restaurant, San Jacinto, CA</span>
+      <a class="hemet-topbar-link" href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener">Facebook</a>
     </div>
   </div>
-</div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">
-      <img src="images/logo.jpg" alt="San Jacinto Rotary Club logo">
-      <span class="brand-text">
-        <span class="club-name">San Jacinto Rotary Club</span>
-        <span class="club-sub">People of Action &middot; District 5330</span>
-      </span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="has-children">
-          <a href="about.html">About Our Club</a>
-          <ul class="sub-menu">
-            <li><a href="leadership.html">Leadership</a></li>
-            <li><a href="member-directory.html">Member Directory</a></li>
-            <li><a href="birthdays.html">Birthdays</a></li>
-            <li><a href="club-committees.html">Club Committees</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="district.html">District Links</a>
-          <ul class="sub-menu">
-            <li><a href="district-leaders.html">District Leaders</a></li>
-            <li><a href="https://www.district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
-            <li><a href="https://district5330.org/" target="_blank" rel="noopener">District 5330</a></li>
-            <li><a href="https://district5330.org/our-blog/" target="_blank" rel="noopener">District Blog</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="about-rotary.html">About Rotary</a>
-          <ul class="sub-menu">
-            <li><a href="guiding-principles.html">Guiding Principles</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="events.html">Events</a>
-          <ul class="sub-menu">
-            <li><a href="index.html#peaches">Peach of a Deal</a></li>
-            <li><a href="https://convention.rotary.org/en-us/" target="_blank" rel="noopener">RI Convention</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section class="hero page-hero">
-  <img class="banner-img" src="images/banner.png" alt="Contact San Jacinto Rotary Club" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.35;">
-  <div class="container" style="position:relative;">
-    <span class="eyebrow">Contact Us</span>
-    <h1>We'd Love to Hear From You</h1>
-    <p>Thank you for taking the time to reach out. Fill out the form below and we'll respond shortly, or reach us directly by email or Facebook.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="contact-wrap">
-      <div class="form-card">
-        <h3>Send Us a Message</h3>
-        <form action="mailto:sanjacintorotary@gmail.com" method="post" enctype="text/plain">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="fname">First Name *</label>
-              <input type="text" id="fname" name="First Name" required>
-            </div>
-            <div class="form-field">
-              <label for="lname">Last Name *</label>
-              <input type="text" id="lname" name="Last Name" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="Email" required>
-            </div>
-            <div class="form-field">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="Phone" placeholder="(area code) 000-0000" required>
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="reason">Why Are You Contacting Us? *</label>
-            <select id="reason" name="Reason" required>
-              <option value="">Please select</option>
-              <option value="Membership">Membership</option>
-              <option value="Peach of a Deal Order">Peach of a Deal Order</option>
-              <option value="Community Projects">Community Projects</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="message">Comment or Message *</label>
-            <textarea id="message" name="Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-navy">Submit</button>
-          <p class="form-note">Submitting opens your email app addressed to sanjacintorotary@gmail.com. Prefer email directly? Write to us at <a href="mailto:sanjacintorotary@gmail.com">sanjacintorotary@gmail.com</a>.</p>
-        </form>
-      </div>
-
-      <div>
-        <div class="contact-info-card">
-          <h3>Reach Us Directly</h3>
-          <div class="info-row">
-            <div class="icon">&#9993;</div>
-            <div>
-              <strong style="color:#fff;">Email</strong>
-              <p><a href="mailto:sanjacintorotary@gmail.com">sanjacintorotary@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="icon">f</div>
-            <div>
-              <strong style="color:#fff;">Facebook</strong>
-              <p><a href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener">facebook.com/SJRotary</a></p>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="icon">&#128205;</div>
-            <div>
-              <strong style="color:#fff;">Mailing Address</strong>
-              <p>1460 Caraway Ct<br>San Jacinto, CA 92582</p>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="icon">&#128337;</div>
-            <div>
-              <strong style="color:#fff;">Weekly Meeting</strong>
-              <p>Wednesdays, 12:15 PM<br>Emilio's Restaurant<br>2340 S. San Jacinto Ave<br>San Jacinto, CA 92583</p>
-            </div>
-          </div>
+  <!-- ====== HEMET-STYLE MAIN NAVIGATION ====== -->
+  <header class="hemet-header">
+    <div class="container hemet-header-inner">
+      <a href="index.html" class="hemet-brand">
+        <img src="images/logo.jpg" alt="Rotary Club of San Jacinto logo">
+        <div class="hemet-brand-text">
+          <span class="hemet-brand-name">Rotary Club of San Jacinto</span>
+          <span class="hemet-brand-tag">People of Action • District 5330</span>
         </div>
+      </a>
 
-        <div class="card" style="margin-top:24px; background:var(--peach-light); border-color:#f2d6b3;">
-          <h3>Ordering Peaches &amp; Apples?</h3>
-          <p>You can also order the 15th Annual "Peach of a Deal" fundraiser boxes ($27 per 11 lb. box) directly from any San Jacinto Rotarian, or by emailing us with "Peach of a Deal Order" as your subject.</p>
-          <a class="btn btn-navy" href="mailto:sanjacintorotary@gmail.com?subject=Peach%20of%20a%20Deal%20Order">Email to Order</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <button class="hemet-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-<div class="container">
-  <div class="meeting-card">
-    <div class="day-badge">
-      <div class="day">WED</div>
-      <div class="time">12:15 PM</div>
-    </div>
-    <div>
-      <h4>Weekly Meeting</h4>
-      <p>Emilio's Restaurant &middot; 2340 S. San Jacinto Ave, San Jacinto, CA 92583</p>
-    </div>
-    <a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&query=2340+S+San+Jacinto+Ave+San+Jacinto+CA+92583" target="_blank" rel="noopener">Get Directions</a>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img src="images/logo.jpg" alt="San Jacinto Rotary Club logo">
-          <span>San Jacinto Rotary Club</span>
-        </div>
-        <p>Serving the San Jacinto Valley with Service Above Self since 1954. Part of Rotary International District 5330.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
+      <nav class="hemet-main-nav" aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Our Club</a></li>
-          <li><a href="district.html">District Links</a></li>
-          <li><a href="about-rotary.html">About Rotary</a></li>
-          <li><a href="events.html">Events</a></li>
+          <li class="has-dropdown">
+            <a href="about.html">About Our Club <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">Leadership</a></li>
+              <li><a href="coming-soon.html">Member Directory</a></li>
+              <li><a href="coming-soon.html">Birthdays</a></li>
+              <li><a href="coming-soon.html">Club Committees</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="district.html">District Links <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">District Leaders</a></li>
+              <li><a href="https://district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
+              <li><a href="district.html">District 5330</a></li>
+              <li><a href="coming-soon.html">District Blog</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="coming-soon.html">About Rotary <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">Guiding Principles</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="coming-soon.html">Events <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="index.html#peaches">Peach of a Deal</a></li>
+              <li><a href="https://www.rotary.org/en/events/rotary-convention" target="_blank" rel="noopener">RI Convention</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>Emilio's Restaurant<br>2340 S. San Jacinto Ave<br>San Jacinto, CA 92583</li>
-          <li><a href="mailto:sanjacintorotary@gmail.com">sanjacintorotary@gmail.com</a></li>
-        </ul>
-      </div>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 San Jacinto Rotary Club. All rights reserved.</span>
-      <span>A member club of <a href="https://district5330.org/" target="_blank" rel="noopener">Rotary International District 5330</a></span>
+  </header>
+  <!-- ====== INDEX2-STYLE SITE HEADER BANNER ====== -->
+  <div class="site-header">
+    <div class="container header-content">
+      <div class="header-brand">
+        <div class="header-titles">
+          <h1>Rotary Club of San Jacinto</h1>
+          <p>Service Above Self • District 5330</p>
+        </div>
+      </div>
+      <div class="header-meeting-badge">
+        <strong>Weekly Luncheon Meetings</strong>
+        <span>Wednesdays at 12:15 PM • Emilio's Mexican Restaurant</span>
+      </div>
     </div>
   </div>
-</footer>
 
-<script src="js/script.js"></script>
+  <div class="container">
+    <div class="content-grid">
+
+      <!-- Column 1: Left Sidebar -->
+      <aside class="sidebar-column sidebar-column-left">
+
+        <!-- Widget 1: Meeting Location -->
+        <div class="sidebar-widget">
+          <h4>Where We Meet</h4>
+          <p><strong>Emilio's Mexican Restaurant</strong></p>
+          <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
+          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:15 PM</p>
+        </div>
+
+        <!-- Widget 2: Service Focus -->
+        <div class="sidebar-widget">
+          <h4>Community Service</h4>
+          <img src="images/youth.jpg" alt="Rotary Service Project">
+          <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
+        </div>
+
+        <!-- Widget: Peach Fundraiser -->
+        <div class="sidebar-widget">
+          <h4>Peach of a Deal</h4>
+          <p><strong>O'Henry Peaches &amp; Honeycrisp Apples</strong></p>
+          <p>11 lb. box — $27 each</p>
+          <p style="font-size: 0.9rem; color: #64748B; margin-top: 0.5rem;">Order deadline: Sept 1, 2026</p>
+          <a href="mailto:sanjacintorotary@gmail.com?subject=Peach%20of%20a%20Deal%20Order" class="btn btn-navy" style="margin-top: 0.75rem; display: inline-block;">Email to Order</a>
+        </div>
+
+      </aside>
+
+      <!-- Column 2: Main Content Column -->
+      <main class="main-content-column">
+
+        <div class="section-banner">About Our Club</div>
+
+        <!-- Who We Are / Our Mission -->
+        <div class="content-block">
+          <div class="grid grid-2" style="align-items:start;">
+            <div>
+              <span class="eyebrow" style="display:inline-block; color:var(--rotary-gold); background:var(--navy); padding:4px 12px; border-radius:999px; font-family:'Roboto Slab',serif; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; margin-bottom:12px;">Who We Are</span>
+              <h2 style="margin-top: 8px;">A Legacy of Local Service</h2>
+              <p>San Jacinto Rotary Club, formally organized as San Jacinto Community Rotary Club, is a nonprofit civic organization made up of local business and community leaders united by a shared commitment to <strong>"Service Above Self."</strong> Chartered around 1954, we're one of the longer-standing service clubs in the San Jacinto Valley, with more than seven decades of fellowship and community impact.</p>
+              <p>We are organized as a California Nonprofit Public Benefit Corporation (filed October 12, 2016, status active and in good standing), and our related 501(c)(3) entity operates under EIN 82-1237095. Our principal address is 1460 Caraway Ct, San Jacinto, CA 92582.</p>
+            </div>
+            <div>
+              <span class="eyebrow" style="display:inline-block; color:var(--rotary-gold); background:var(--navy); padding:4px 12px; border-radius:999px; font-family:'Roboto Slab',serif; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; margin-bottom:12px;">Our Mission</span>
+              <h2 style="margin-top: 8px;">Building a Better Valley, Together</h2>
+              <p>We are dedicated to identifying and addressing local needs through service projects that promote goodwill, opportunity, and understanding. Alongside Rotary International's global mission, our local expression includes honoring community leaders, supporting students, and standing behind the people who keep San Jacinto strong — including veterans, teachers, and seniors.</p>
+              <p>Consistent with Rotary International's core values, we promote integrity and advance world understanding, goodwill, and peace, one project at a time.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programs & Community Impact -->
+        <div class="section-banner">What We Do</div>
+        <div class="content-block">
+          <h2>Programs &amp; Community Impact</h2>
+          <p>Our club stays active year-round through hands-on projects, an annual signature fundraiser, and a long-running community tradition.</p>
+          <div class="grid grid-3" style="margin-top: 1.25rem;">
+            <div class="card">
+              <h3>Peach of a Deal Fundraiser</h3>
+              <p>Our annual peach and apple sale — now in its 15th year — funds books, scholarships, and Leadership Camp for local students.</p>
+            </div>
+            <div class="card">
+              <h3>Community Recognition Dinner</h3>
+              <p>We host an annual Community Recognition Dinner honoring local educators, first responders, businesses, citizens, and nonprofits.</p>
+            </div>
+            <div class="card">
+              <h3>Scholarships &amp; Leadership Camp</h3>
+              <p>We award college scholarships to local high school students and sponsor students to attend Rotary Leadership Camp.</p>
+            </div>
+            <div class="card">
+              <h3>Support for Veterans &amp; Troops</h3>
+              <p>We provide ongoing support to veterans, active-duty troops, and their families in our community.</p>
+            </div>
+            <div class="card">
+              <h3>Teachers &amp; Seniors</h3>
+              <p>We recognize local teachers and provide support and fellowship opportunities for seniors in the San Jacinto Valley.</p>
+            </div>
+            <div class="card">
+              <h3>Weekly Fellowship</h3>
+              <p>We meet every Wednesday for lunch, fellowship, and planning — guests and prospective members are always welcome.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Club Leadership -->
+        <div class="section-banner">Club Leadership</div>
+        <div class="content-block">
+          <h2>Officers of the Club</h2>
+          <p>San Jacinto Rotary Club is guided by dedicated local volunteers who oversee our governance, finances, and community programs.</p>
+          <div class="grid grid-3" style="margin-top: 1.25rem;">
+            <div class="card officer-card">
+              <div class="officer-avatar">CS</div>
+              <span class="officer-role">President</span>
+              <h3>Craig Shultz</h3>
+              <p>Leads the club's board and oversees our community service direction.</p>
+            </div>
+            <div class="card officer-card">
+              <div class="officer-avatar">JR</div>
+              <span class="officer-role">Secretary</span>
+              <h3>Jim (James) Roeder</h3>
+              <p>Keeps the club's records, communications, and meeting operations running smoothly.</p>
+            </div>
+            <div class="card officer-card">
+              <div class="officer-avatar">JN</div>
+              <span class="officer-role">Treasurer &amp; Registered Agent</span>
+              <h3>John Isaac Norman</h3>
+              <p>Manages the club's finances and serves as our registered agent of record.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Club Facts / Get Involved -->
+        <div class="section-banner">Club Facts</div>
+        <div class="content-block">
+          <div class="grid grid-2" style="align-items:center;">
+            <div>
+              <h2>At a Glance</h2>
+              <ul class="fact-list">
+                <li><strong>Founded</strong><span>Chartered around 1954</span></li>
+                <li><strong>Rotary District</strong><span>District 5330 – Inland Southern California</span></li>
+                <li><strong>Meeting Time</strong><span>Wednesdays at 12:15 PM</span></li>
+                <li><strong>Meeting Location</strong><span>Emilio's Restaurant, 2340 S. San Jacinto Ave, San Jacinto, CA 92583</span></li>
+                <li><strong>Mailing Address</strong><span>1460 Caraway Ct, San Jacinto, CA 92582</span></li>
+                <li><strong>Affiliation</strong><span>Member of Rotary International</span></li>
+              </ul>
+            </div>
+            <div class="card" style="background:var(--peach-light); border-color:#f2d6b3;">
+              <h3>Get Involved</h3>
+              <p>Visitors and prospective members are always welcome! Join us for fellowship, service, and networking while contributing to meaningful community projects in the San Jacinto Valley.</p>
+              <ul>
+                <li>Connect with local business and civic leaders</li>
+                <li>Give back through hands-on community projects</li>
+                <li>Develop leadership and public-service experience</li>
+                <li>Join Rotary's global network of over a million members</li>
+              </ul>
+              <a class="btn btn-navy" href="contact.html" style="margin-top: 10px; display: inline-block;">Contact Us to Join</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meeting Info Card -->
+        <div class="meeting-card">
+          <div class="day-badge">
+            <div class="day">WED</div>
+            <div class="time">12:15 PM</div>
+          </div>
+          <div>
+            <h4>Weekly Meeting</h4>
+            <p>Emilio's Restaurant • 2340 S. San Jacinto Ave, San Jacinto, CA 92583</p>
+          </div>
+          <a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&query=2340+S+San+Jacinto+Ave+San+Jacinto+CA+92583" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
+      </main>
+
+      <!-- Column 3: Right Sidebar -->
+      <aside class="sidebar-column sidebar-column-right">
+
+        <!-- Widget 3: Resources -->
+        <div class="sidebar-widget">
+          <h4>Quick Links</h4>
+          <p style="margin-bottom: 0.65rem;">📘 <a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a></p>
+          <p style="margin-bottom: 0.65rem;">🌐 <a href="https://www.rotary.org" target="_blank">Rotary International</a></p>
+          <p style="margin-bottom: 0.65rem;">📍 <a href="https://rotary5330.org" target="_blank">District 5330 Website</a></p>
+          <p>🔄 <a href="coming-soon.html">Meeting Make-Up Options</a></p>
+        </div>
+
+        <!-- Widget 4: Calendar -->
+        <div class="sidebar-widget">
+          <h4>August 2026</h4>
+          <table class="calendar-table">
+            <thead>
+              <tr>
+                <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+              </tr>
+              <tr>
+                <td>2</td><td>3</td><td>4</td><td class="active-day">5</td><td>6</td><td>7</td><td>8</td>
+              </tr>
+              <tr>
+                <td>9</td><td>10</td><td>11</td><td class="active-day">12</td><td>13</td><td>14</td><td>15</td>
+              </tr>
+              <tr>
+                <td>16</td><td>17</td><td>18</td><td class="active-day">19</td><td>20</td><td>21</td><td>22</td>
+              </tr>
+              <tr>
+                <td>23</td><td>24</td><td>25</td><td class="active-day">26</td><td>27</td><td>28</td><td>29</td>
+              </tr>
+              <tr>
+                <td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Widget 5: District Info -->
+        <div class="sidebar-widget">
+          <h4>Rotary District 5330</h4>
+          <p>San Jacinto Rotary Club is proud to be part of District 5330, serving the Inland Southern California region alongside more than 60 sister clubs.</p>
+          <a href="district.html" style="font-weight: 700;">Learn more about our District →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h5>Rotary Club of San Jacinto</h5>
+        <p>P.O. Box 1691<br>San Jacinto, CA 92581</p>
+      </div>
+      <div>
+        <h5>Meeting Location</h5>
+        <p>Wednesdays at 12:15 PM<br>Emilio's Mexican Restaurant<br>San Jacinto, CA</p>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <p><a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a><br><a href="mailto:sanjacintorotary@gmail.com">Email Club Secretary</a></p>
+      </div>
+    </div>
+
+    <div class="footer-subbar">
+      © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Use</a>
+      <div align="center" style="margin-top: 8px;">
+        <a href="https://www.counter12.com"><img src="https://www.counter12.com/img-c2zD3zW9wYbCwdDC-8.gif" border="0" alt="counter"></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
