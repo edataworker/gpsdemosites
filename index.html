@@ -437,28 +437,57 @@
 </head>
 <body>
 
-  <!-- Top Blue Navigation Header -->
-  <header class="top-nav-bar">
-    <div class="container nav-container">
-      <div class="nav-left">
-        <img src="images/logo.png" alt="Rotary Wheel Logo" class="nav-logo-icon">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#meetings">Meetings</a></li>
-          <li><a href="#membership">Join Rotary</a></li>
-          <li><a href="#projects">Service Projects</a></li>
-          <li><a href="#calendar">Calendar</a></li>
-          <li><a href="https://www.facebook.com/SJRotary/" target="_blank">News & Photos</a></li>
-        </ul>
-      </div>
-      <!--<div class="nav-right">
-        <input type="text" placeholder="Search..." class="search-input" aria-label="Search">
-        <a href="#login" class="member-login-link">Member Login</a>
-      </div>-->
-    </div>
-  </header>
+  <header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="images/logo.jpg" alt="San Jacinto Rotary Club logo">
+      <span class="brand-text">
+        <span class="club-name">San Jacinto Rotary Club</span>
+        <span class="club-sub">People of Action &middot; District 5330</span>
+      </span>
+    </a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
+    <nav class="main-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li class="has-dropdown">
+          <a href="about.html" class="dropdown-toggle" aria-expanded="false">About Us <span class="arrow"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">About Our Club</a></li>
+            <li><a href="about.html#leadership">Board &amp; Leadership</a></li>
+            <li><a href="about.html#history">Club History</a></li>
+            <li><a href="district.html">District 5330</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#peaches" class="dropdown-toggle" aria-expanded="false">What We Do <span class="arrow"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#peaches">Peach &amp; Apple Fundraiser</a></li>
+            <li><a href="#projects">Community Projects</a></li>
+            <li><a href="#youth">Youth &amp; Scholarships</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="contact.html" class="dropdown-toggle" aria-expanded="false">Get Involved <span class="arrow"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="contact.html">Join a Meeting</a></li>
+            <li><a href="contact.html#membership">Become a Member</a></li>
+            <li><a href="mailto:sanjacintorotary@gmail.com">Donate &amp; Support</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
   <!-- Site Header Banner -->
   <div class="site-header">
     <div class="container header-content">
