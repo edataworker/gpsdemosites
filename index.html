@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+<base target="_blank">
 </head>
 <body>
-
   <!-- ====== HEMET-STYLE TOP BAR ====== -->
   <div class="hemet-topbar">
     <div class="container hemet-topbar-inner">
@@ -24,7 +24,7 @@
   <header class="hemet-header">
     <div class="container hemet-header-inner">
       <a href="index.html" class="hemet-brand">
-        <img src="images/logo.png" alt="Rotary Club of San Jacinto logo">
+        <img src="images/logo.jpg" alt="Rotary Club of San Jacinto logo">
         <div class="hemet-brand-text">
           <span class="hemet-brand-name">Rotary Club of San Jacinto</span>
           <span class="hemet-brand-tag">People of Action • District 5330</span>
@@ -38,14 +38,42 @@
       <nav class="hemet-main-nav" aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Our Club</a></li>
-          <li><a href="district.html">District 5330</a></li>
+          <li class="has-dropdown">
+            <a href="about.html">About Our Club <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">Leadership</a></li>
+              <li><a href="coming-soon.html">Member Directory</a></li>
+              <li><a href="coming-soon.html">Birthdays</a></li>
+              <li><a href="coming-soon.html">Club Committees</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="district.html">District Links <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">District Leaders</a></li>
+              <li><a href="https://district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
+              <li><a href="district.html">District 5330</a></li>
+              <li><a href="coming-soon.html">District Blog</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="coming-soon.html">About Rotary <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="coming-soon.html">Guiding Principles</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="coming-soon.html">Events <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown">
+              <li><a href="index.html#peaches">Peach of a Deal</a></li>
+              <li><a href="https://www.rotary.org/en/events/rotary-convention" target="_blank" rel="noopener">RI Convention</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   <!-- ====== INDEX2-STYLE SITE HEADER BANNER ====== -->
   <div class="site-header">
     <div class="container header-content">
@@ -57,13 +85,12 @@
       </div>
       <div class="header-meeting-badge">
         <strong>Weekly Luncheon Meetings</strong>
-        <span>Wednesdays at 12:00 PM • Emilio's Mexican Restaurant</span>
+        <span>Wednesdays at 12:15 PM • Emilio's Mexican Restaurant</span>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <!-- ====== INDEX2-STYLE 3-COLUMN LAYOUT ====== -->
     <div class="content-grid">
 
       <!-- Column 1: Left Sidebar -->
@@ -74,7 +101,7 @@
           <h4>Where We Meet</h4>
           <p><strong>Emilio's Mexican Restaurant</strong></p>
           <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
-          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:00 PM</p>
+          <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:15 PM</p>
         </div>
 
         <!-- Widget 2: Service Focus -->
@@ -110,7 +137,7 @@
         <!-- Section 1: Welcome -->
         <div class="section-banner">Welcome to San Jacinto Rotary</div>
         <div class="content-block">
-          <h2>Service Above Self Since 1922</h2>
+          <h2>Service Above Self Since 1954</h2>
           <p>
             Rotary International is a global network of 1.4 million neighbors, friends, leaders, and problem-solvers who see a world where people unite and take action to create lasting change across the globe, in our communities, and in ourselves.
           </p>
@@ -124,6 +151,36 @@
             <strong>Guest Contact:</strong> Peaches — Club Secretary |
             <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a>
           </p>
+        </div>
+
+        <!-- Section: Peach of a Deal -->
+        <div class="section-banner" id="peaches">Annual Fundraiser</div>
+        <div class="content-block">
+          <div class="peach-banner" style="padding: 28px;">
+            <div>
+              <span class="ribbon">Fresh from the Orchard</span>
+              <h3 style="margin-top: 10px;">15th Annual "Peach of a Deal" Fundraiser</h3>
+              <p>Our annual peach and apple sale is underway, with delivery expected in early September. Every box purchased helps fund books for San Jacinto students, college scholarships, and Leadership Camp.</p>
+              <p>The O'Henry peach is a late-summer freestone variety, sweet and juicy, excellent for salads, baking, sorbets, preserves, sauces, smoothies, and plain eating. The Honeycrisp apple brings sweetness, firmness, and tartness, perfect for eating fresh or baking into a pie.</p>
+              <div class="peach-prices">
+                <div class="price-tag">
+                  <div class="amount">$27</div>
+                  <div class="label">11 lb. box of O'Henry Peaches</div>
+                </div>
+                <div class="price-tag">
+                  <div class="amount">$27</div>
+                  <div class="label">11 lb. box of Honeycrisp Apples</div>
+                </div>
+              </div>
+              <p style="margin-top:14px; font-size:.92rem;">Quantities are limited — order soon before they're gone. Order from any San Jacinto Rotarian, or email us directly.</p>
+            </div>
+            <div class="deadline-box" style="margin-top: 20px;">
+              <div class="big">Order Deadline: September 1, 2026</div>
+              <p>Pick-up in early September, 4:00 PM – 5:30 PM, at the San Jacinto Unified School District Central Kitchen, 221 Bissell Place. An exact pick-up date will be announced soon.</p>
+              <p>Place your order by emailing <a href="mailto:sanjacintorotary@gmail.com">sanjacintorotary@gmail.com</a> or connecting with any San Jacinto Rotarian.</p>
+              <a class="btn" style="margin-top:10px; display: inline-block;" href="mailto:sanjacintorotary@gmail.com?subject=Peach%20of%20a%20Deal%20Order">Email to Order</a>
+            </div>
+          </div>
         </div>
 
         <!-- Section 2: What Your Support Funds -->
@@ -211,7 +268,7 @@
           <p style="margin-bottom: 0.65rem;">📘 <a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a></p>
           <p style="margin-bottom: 0.65rem;">🌐 <a href="https://www.rotary.org" target="_blank">Rotary International</a></p>
           <p style="margin-bottom: 0.65rem;">📍 <a href="https://rotary5330.org" target="_blank">District 5330 Website</a></p>
-          <p>🔄 <a href="#">Meeting Make-Up Options</a></p>
+          <p>🔄 <a href="coming-soon.html">Meeting Make-Up Options</a></p>
         </div>
 
         <!-- Widget 4: Calendar -->
@@ -267,16 +324,16 @@
       </div>
       <div>
         <h5>Meeting Location</h5>
-        <p>Wednesdays at 12:00 PM<br>Emilio's Mexican Restaurant<br>San Jacinto, CA</p>
+        <p>Wednesdays at 12:15 PM<br>Emilio's Mexican Restaurant<br>San Jacinto, CA</p>
       </div>
       <div>
         <h5>Connect</h5>
-        <p><a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a><br><a href="mailto:peaches@sanjacintorotary.org">Email Club Secretary</a></p>
+        <p><a href="https://www.facebook.com/SJRotary/" target="_blank">Official Facebook Page</a><br><a href="mailto:sanjacintorotary@gmail.com">Email Club Secretary</a></p>
       </div>
     </div>
 
     <div class="footer-subbar">
-      © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+      © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="coming-soon.html">Privacy Policy</a> | <a href="coming-soon.html">Terms of Use</a>
       <div align="center" style="margin-top: 8px;">
         <a href="https://www.counter12.com"><img src="https://www.counter12.com/img-c2zD3zW9wYbCwdDC-8.gif" border="0" alt="counter"></a>
       </div>
