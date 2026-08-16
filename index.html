@@ -4,493 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rotary Club of San Jacinto • District 5330</title>
+  <meta name="description" content="San Jacinto Rotary Club — Service Above Self in the San Jacinto Valley since 1954. Weekly meetings, scholarships, the Peach of a Deal fundraiser, and community service.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      /* Soft gradient background matching Rotary civic aesthetic */
-      --bg-canvas: #EBF3FA;
-      --card-bg: #FFFFFF;
-      --nav-blue: #005DAB;         /* Royal Blue Header */
-      --rotary-blue: #00246C;      /* Deep Primary Rotary Blue */
-      --rotary-gold: #F7A81B;      /* Rotary Accent Gold */
-      --text-main: #2D3748;
-      --border-grey: #CBD5E1;      
-      --border-light: #E2E8F0;
-      --section-header-bg: #EAECEE;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(180deg, #E2ECF7 0%, #EEF4FA 35%, #F4F7FB 100%);
-      background-attachment: fixed;
-      color: var(--text-main);
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    /* Expanded container max-width to fill canvas space */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Top Royal Blue Navigation Bar */
-    .top-nav-bar {
-      background: var(--nav-blue);
-      color: #FFFFFF;
-      padding: 0.75rem 0;
-      border-bottom: 2px solid #004580;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-
-    .nav-logo-icon {
-      height: 60px;
-      width: auto;
-      background: #FFFFFF;
-      /*border-radius: 50%;
-      padding: 2px;*/
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    /* Navigation Menu Links */
-    .nav-links a {
-      font-family: 'Roboto Slab', serif;
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links a:hover {
-      text-decoration: underline;
-      color: var(--rotary-gold);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-/*    .search-input {
-      padding: 0.4rem 0.75rem;
-      border: 1px solid var(--border-grey);
-      border-radius: 3px;
-      font-size: 1rem;
-      width: 160px;
-    }
-
-    .member-login-link {
-      color: #FFFFFF;
-      font-size: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-*/
-    /* Header */
-    .site-header {
-      background: #FFFFFF;
-      border-bottom: 3px solid var(--rotary-gold);
-      padding: 1.25rem 0;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    
-    .header-titles h1 {
-      font-family: 'Roboto Slab', serif;
-      color: var(--rotary-blue);
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.1;
-    }
-
-    .header-titles p {
-      color: #475569;
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-
-    .header-meeting-badge {
-      background: #F8FAFC;
-      border: 1px solid var(--border-grey);
-      border-left: 4px solid var(--nav-blue);
-      padding: 0.75rem 1.25rem;
-      border-radius: 4px;
-      text-align: right;
-    }
-
-    .header-meeting-badge strong {
-      color: var(--rotary-blue);
-      font-size: 1.05rem;
-      display: block;
-    }
-
-    .header-meeting-badge span {
-      font-size: 0.95rem;
-      color: #64748B;
-    }
-
-    /* Main Content Layout - 3-Column Body Structure */
-    .content-grid {
-      display: grid;
-      /* Refactored into Left Sidebar + Main Content + Right Sidebar */
-      grid-template-columns: 300px 1fr 300px;
-      gap: 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-banner {
-      background: var(--section-header-bg);
-      border: 1px solid var(--border-grey);
-      color: var(--rotary-blue);
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 0.75rem 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 1.25rem;
-      border-left: 5px solid var(--rotary-gold);
-    }
-
-    .content-block {
-      background: var(--card-bg);
-      border: 1px solid var(--border-grey);
-      border-radius: 4px;
-      padding: 1.75rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 6px rgba(0, 36, 108, 0.05);
-    }
-
-    .content-block h2 {
-      color: var(--rotary-blue);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      font-family: 'Roboto Slab', serif;
-    }
-
-    .content-block h3 {
-      color: var(--rotary-blue);
-      font-size: 1.35rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .content-block p {
-      font-size: 1.05rem;
-      color: var(--text-main);
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .content-block a {
-      color: var(--nav-blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .content-block a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hero */
-    .hero-banner-box {
-      position: relative;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-bottom: 1.75rem;
-      border: 1px solid var(--border-grey);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .hero-banner-box img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-banner-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0, 36, 108, 0.88) 100%);
-      color: #FFFFFF;
-      padding: 1.5rem 1.75rem 1.25rem;
-    }
-
-    .hero-banner-caption h2 {
-      color: #FFFFFF;
-      font-size: 1.85rem;
-      margin-bottom: 0.35rem;
-      font-family: 'Roboto Slab', serif;
-    }
-
-    .hero-banner-caption p {
-      color: #E2E8F0;
-      font-size: 1.1rem;
-      margin-bottom: 0;
-    }
-
-    /* Event Items */
-    .event-item {
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px dashed var(--border-light);
-    }
-
-    .event-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .event-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--nav-blue);
-      text-decoration: none;
-      display: block;
-    }
-
-    .event-date {
-      font-size: 0.95rem;
-      color: #64748B;
-      margin-top: 0.2rem;
-    }
-
-    /* Sidebar Widgets */
-    .sidebar-widget {
-      background: var(--card-bg);
-      border: 1px solid var(--border-grey);
-      border-radius: 4px;
-      padding: 1.5rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 2px 6px rgba(0, 36, 108, 0.05);
-    }
-
-    .sidebar-widget h4 {
-      color: var(--rotary-blue);
-      font-size: 1.2rem;
-      margin-bottom: 0.85rem;
-      border-bottom: 2px solid var(--rotary-gold);
-      padding-bottom: 0.4rem;
-    }
-
-    .sidebar-widget img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 3px;
-      margin-bottom: 0.85rem;
-    }
-
-    .calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-
-    .calendar-table th {
-      color: var(--rotary-blue);
-      padding: 0.5rem 0;
-      font-weight: 700;
-    }
-
-    .calendar-table td {
-      padding: 0.5rem 0;
-      color: var(--text-main);
-    }
-
-    .calendar-table td.active-day {
-      border: 1px solid var(--nav-blue);
-      background: #E0F2FE;
-      color: var(--nav-blue);
-      font-weight: 700;
-      border-radius: 3px;
-    }
-
-    /* Footer */
-    footer {
-      background: #030303;
-      color: #94A3B8;
-      font-size: 0.95rem;
-      padding-top: 2.25rem;
-      border-top: 2px solid var(--rotary-gold);
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      padding-bottom: 2.25rem;
-    }
-
-    footer h5 {
-      color: #FFFFFF;
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-    }
-
-    footer a {
-      color: #CBD5E1;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-      color: var(--rotary-gold);
-    }
-
-    .footer-subbar {
-      background: #000000;
-      color: #64748B;
-      text-align: center;
-      padding: 1.15rem 0;
-      border-top: 1px solid #1E293B;
-      font-size: 0.9rem;
-    }
-
-    .scroll-top-btn {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: #BAE6FD;
-      color: var(--nav-blue);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: bold;
-      border: 1px solid #7DD3FC;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    @media (max-width: 1200px) {
-      .content-grid {
-        grid-template-columns: 300px 1fr;
-      }
-      .sidebar-column-right { display: none; }
-    }
-
-    @media (max-width: 992px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-      }
-      .header-meeting-badge {
-        text-align: center;
-      }
-      .sidebar-column-left { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Top Blue Navigation Header -->
-  <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html">
-      <img src="images/logo.jpg" alt="San Jacinto Rotary Club logo">
-      <span class="brand-text">
-        <span class="club-name">San Jacinto Rotary Club</span>
-        <span class="club-sub">People of Action &middot; District 5330</span>
-      </span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="has-children">
-          <a href="about.html">About Our Club</a>
-          <ul class="sub-menu">
-            <li><a href="leadership.html">Leadership</a></li>
-            <li><a href="member-directory.html">Member Directory</a></li>
-            <li><a href="birthdays.html">Birthdays</a></li>
-            <li><a href="club-committees.html">Club Committees</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="district.html">District Links</a>
-          <ul class="sub-menu">
-            <li><a href="district-leaders.html">District Leaders</a></li>
-            <li><a href="https://www.district5330.org/wallis-jones/" target="_blank" rel="noopener">Wallis Jones Grant</a></li>
-            <li><a href="https://district5330.org/" target="_blank" rel="noopener">District 5330</a></li>
-            <li><a href="https://district5330.org/our-blog/" target="_blank" rel="noopener">District Blog</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="about-rotary.html">About Rotary</a>
-          <ul class="sub-menu">
-            <li><a href="guiding-principles.html">Guiding Principles</a></li>
-          </ul>
-        </li>
-        <li class="has-children">
-          <a href="events.html">Events</a>
-          <ul class="sub-menu">
-            <li><a href="https://tinseltriathlon.com/" target="_blank" rel="noopener">Tinsel Triathlon</a></li>
-            <li><a href="https://convention.rotary.org/en-us/" target="_blank" rel="noopener">RI Convention Taipei-Taiwan</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
+  <!-- ====== HEMET-STYLE TOP BAR ====== -->
+  <div class="hemet-topbar">
+    <div class="container hemet-topbar-inner">
+      <span class="hemet-topbar-text">Weekly Meetings: Wednesdays, 12:15 PM at Emilio's Restaurant, San Jacinto, CA</span>
+      <a class="hemet-topbar-link" href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
-</header>
 
-  <!-- Site Header Banner -->
+  <!-- ====== HEMET-STYLE MAIN NAVIGATION ====== -->
+  <header class="hemet-header">
+    <div class="container hemet-header-inner">
+      <a href="index.html" class="hemet-brand">
+        <img src="images/logo.png" alt="Rotary Club of San Jacinto logo">
+        <div class="hemet-brand-text">
+          <span class="hemet-brand-name">Rotary Club of San Jacinto</span>
+          <span class="hemet-brand-tag">People of Action • District 5330</span>
+        </div>
+      </a>
+
+      <button class="hemet-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="hemet-main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Our Club</a></li>
+          <li><a href="district.html">District 5330</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== INDEX2-STYLE SITE HEADER BANNER ====== -->
   <div class="site-header">
     <div class="container header-content">
       <div class="header-brand">
@@ -501,22 +57,22 @@
       </div>
       <div class="header-meeting-badge">
         <strong>Weekly Luncheon Meetings</strong>
-        <span>Wednesdays at 12:00 PM • Emilio’s Mexican Restaurant</span>
+        <span>Wednesdays at 12:00 PM • Emilio's Mexican Restaurant</span>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <!-- Main Content Layout - Correct 3-Column Structure -->
+    <!-- ====== INDEX2-STYLE 3-COLUMN LAYOUT ====== -->
     <div class="content-grid">
-      
+
       <!-- Column 1: Left Sidebar -->
       <aside class="sidebar-column sidebar-column-left">
-        
+
         <!-- Widget 1: Meeting Location -->
         <div class="sidebar-widget">
           <h4>Where We Meet</h4>
-          <p><strong>Emilio’s Mexican Restaurant</strong></p>
+          <p><strong>Emilio's Mexican Restaurant</strong></p>
           <p>2340 S San Jacinto Ave<br>San Jacinto, CA 92583</p>
           <p style="margin-top: 0.5rem; font-weight: 600; color: var(--rotary-blue);">Wednesdays at 12:00 PM</p>
         </div>
@@ -528,11 +84,20 @@
           <p>Our members contribute hundreds of volunteer hours each year supporting local food banks, schools, and youth leadership initiatives.</p>
         </div>
 
+        <!-- Widget: Peach Fundraiser -->
+        <div class="sidebar-widget">
+          <h4>Peach of a Deal</h4>
+          <p><strong>O'Henry Peaches &amp; Honeycrisp Apples</strong></p>
+          <p>11 lb. box — $27 each</p>
+          <p style="font-size: 0.9rem; color: #64748B; margin-top: 0.5rem;">Order deadline: Sept 1, 2026</p>
+          <a href="mailto:sanjacintorotary@gmail.com?subject=Peach%20of%20a%20Deal%20Order" class="btn btn-navy" style="margin-top: 0.75rem; display: inline-block;">Email to Order</a>
+        </div>
+
       </aside>
 
       <!-- Column 2: Main Content Column -->
       <main class="main-content-column">
-        
+
         <!-- Hero Banner Box -->
         <div class="hero-banner-box">
           <img src="images/community.jpg" alt="San Jacinto Rotary Volunteers">
@@ -556,12 +121,53 @@
             We invite you to join us for lunch as a guest and experience firsthand how Rotary brings good people together for great causes!
           </p>
           <p style="margin-top: 1.25rem;">
-            <strong>Guest Contact:</strong> Peaches — Club Secretary | 
+            <strong>Guest Contact:</strong> Peaches — Club Secretary |
             <a href="mailto:peaches@sanjacintorotary.org">peaches@sanjacintorotary.org</a>
           </p>
         </div>
 
-        <!-- Section 2: Diversity Policy -->
+        <!-- Section 2: What Your Support Funds -->
+        <div class="section-banner">What Your Support Funds</div>
+        <div class="content-block">
+          <h2>Every Project Strengthens Our Valley</h2>
+          <p>When you purchase peaches and apples — or join us for a meeting — you help place books in the hands of San Jacinto students and support our year-round community programs.</p>
+          <div class="grid grid-2" style="margin-top: 1.25rem;">
+            <div class="card">
+              <h3>Books for Students</h3>
+              <p>Putting books directly into the hands of San Jacinto students to build a love of reading.</p>
+            </div>
+            <div class="card">
+              <h3>College Scholarships</h3>
+              <p>Awarding scholarships to local high school students pursuing higher education.</p>
+            </div>
+            <div class="card">
+              <h3>Leadership Camp</h3>
+              <p>Sending students to Rotary Leadership Camp to build confidence and life skills.</p>
+            </div>
+            <div class="card">
+              <h3>Veterans &amp; Troops</h3>
+              <p>Supporting veterans, active troops, and their families throughout the year.</p>
+            </div>
+            <div class="card">
+              <h3>Teachers</h3>
+              <p>Recognizing and supporting the educators who shape our community's future.</p>
+            </div>
+            <div class="card">
+              <h3>Seniors</h3>
+              <p>Providing assistance and fellowship opportunities for local seniors.</p>
+            </div>
+            <div class="card">
+              <h3>Community Recognition</h3>
+              <p>Hosting our annual Community Recognition Dinner honoring local leaders and nonprofits.</p>
+            </div>
+            <div class="card">
+              <h3>Weekly Fellowship</h3>
+              <p>Open, welcoming meetings every Wednesday for members and guests alike.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Diversity Policy -->
         <div class="section-banner">Diversity, Equity, and Inclusion</div>
         <div class="content-block">
           <p style="font-weight: 600; color: var(--rotary-blue); font-size: 1.1rem; line-height: 1.7;">
@@ -570,11 +176,35 @@
           <p style="font-style: italic; color: #64748B; margin-bottom: 0;">- Rotary International Statement on DEI</p>
         </div>
 
+        <!-- Section 4: Get Involved -->
+        <div class="section-banner">Get Involved</div>
+        <div class="content-block">
+          <h2>Guests Are Always Welcome</h2>
+          <p>Whether you're new to San Jacinto or a longtime resident looking for a way to give back, San Jacinto Rotary Club offers fellowship, leadership development, and a hands-on way to serve the Valley. We meet weekly and welcome visitors to join us for lunch.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 1rem;">
+            <a class="btn btn-navy" href="contact.html">Contact Us</a>
+            <a class="btn" style="background:var(--white); color:var(--navy); border:2px solid var(--rotary-gold);" href="https://www.facebook.com/SJRotary" target="_blank" rel="noopener">Follow on Facebook</a>
+          </div>
+        </div>
+
+        <!-- Meeting Info Card -->
+        <div class="meeting-card">
+          <div class="day-badge">
+            <div class="day">WED</div>
+            <div class="time">12:15 PM</div>
+          </div>
+          <div>
+            <h4>Weekly Meeting</h4>
+            <p>Emilio's Restaurant • 2340 S. San Jacinto Ave, San Jacinto, CA 92583</p>
+          </div>
+          <a class="btn btn-navy" href="https://www.google.com/maps/search/?api=1&query=2340+S+San+Jacinto+Ave+San+Jacinto+CA+92583" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
       </main>
 
       <!-- Column 3: Right Sidebar -->
       <aside class="sidebar-column sidebar-column-right">
-        
+
         <!-- Widget 3: Resources -->
         <div class="sidebar-widget">
           <h4>Quick Links</h4>
@@ -616,6 +246,13 @@
           </table>
         </div>
 
+        <!-- Widget 5: District Info -->
+        <div class="sidebar-widget">
+          <h4>Rotary District 5330</h4>
+          <p>San Jacinto Rotary Club is proud to be part of District 5330, serving the Inland Southern California region alongside more than 60 sister clubs.</p>
+          <a href="district.html" style="font-weight: 700;">Learn more about our District →</a>
+        </div>
+
       </aside>
 
     </div>
@@ -630,7 +267,7 @@
       </div>
       <div>
         <h5>Meeting Location</h5>
-        <p>Wednesdays at 12:00 PM<br>Emilio’s Mexican Restaurant<br>San Jacinto, CA</p>
+        <p>Wednesdays at 12:00 PM<br>Emilio's Mexican Restaurant<br>San Jacinto, CA</p>
       </div>
       <div>
         <h5>Connect</h5>
@@ -639,12 +276,15 @@
     </div>
 
     <div class="footer-subbar">
-    © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-    <div align=center><a href='https://www.counter12.com'><img src='https://www.counter12.com/img-c2zD3zW9wYbCwdDC-8.gif' border='0' alt='counter'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=c2zD3zW9wYbCwdDC'></script></div>
+      © 2002–2026 Rotary Club of San Jacinto • District 5330 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+      <div align="center" style="margin-top: 8px;">
+        <a href="https://www.counter12.com"><img src="https://www.counter12.com/img-c2zD3zW9wYbCwdDC-8.gif" border="0" alt="counter"></a>
+      </div>
     </div>
   </footer>
 
-  <a href="#" class="scroll-top-btn" aria-label="Scroll to top">▲</a>
+  <a href="#" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
