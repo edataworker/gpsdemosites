@@ -96,130 +96,151 @@ img { max-width: 100%; display: block; }
 }
 .topbar-social a:hover { background: var(--gold); color: var(--navy); }
 
-/* ---------- Header / nav ---------- */
+/* ---------- Header & Navigation ---------- */
 .site-header {
   background: var(--white);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px solid var(--line);
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
 }
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
-  gap: 20px;
+  padding: 12px 24px;
+  max-width: var(--maxw);
+  margin: 0 auto;
 }
-.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand img { height: 58px; width: auto; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-.brand-text .club-name { font-family: "Poppins", sans-serif; font-weight: 700; color: var(--navy); font-size: 1.15rem; }
-.brand-text .club-sub { font-size: 0.78rem; color: var(--azure); letter-spacing: 0.06em; text-transform: uppercase; }
 
-/* ---------- Main Navigation - HORIZONTAL ---------- */
-nav.main-nav {
-  display: flex !important;
+.brand {
+  display: flex;
   align-items: center;
-  flex: 1;
-  justify-content: flex-end;
+  gap: 12px;
+}
+.brand img {
+  height: 54px;
+  width: auto;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.brand-text .club-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+.brand-text .club-sub {
+  font-size: 0.78rem;
+  color: var(--azure);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
+/* Main Nav Desktop */
 nav.main-nav > ul {
-  display: flex !important;
-  align-items: center;
   list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   margin: 0;
   padding: 0;
-  gap: 2px;
-  flex-wrap: nowrap;
 }
 
 nav.main-nav > ul > li {
   position: relative;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
-nav.main-nav > ul > li > a {
-  display: block;
-  padding: 10px 12px;
+nav.main-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   letter-spacing: 0.02em;
   color: var(--navy);
   border-radius: 6px;
   text-transform: uppercase;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 nav.main-nav > ul > li > a:hover,
-nav.main-nav > ul > li.active > a {
+nav.main-nav > ul > li.active > a,
+nav.main-nav > ul > li:hover > a {
   background: var(--azure);
   color: var(--white);
 }
 
-/* ---------- Dropdown indicator ---------- */
-nav.main-nav li.has-children > a::after {
-  content: "\25BE";
-  font-size: 0.6em;
-  margin-left: 4px;
-  vertical-align: middle;
+/* Caret Arrow Indicator */
+.arrow {
   display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--navy);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+nav.main-nav > ul > li:hover > a .arrow,
+nav.main-nav > ul > li.active > a .arrow {
+  border-top-color: var(--white);
 }
 
-/* ---------- Dropdown sub-menu ---------- */
-nav.main-nav .sub-menu {
-  display: none;
+/* Dropdown Submenus */
+.dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 210px;
+  min-width: 220px;
   background: var(--white);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
   border: 1px solid var(--line);
-  padding: 8px;
-  margin: 0;
+  border-top: 3px solid var(--azure);
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--shadow);
   list-style: none;
-  z-index: 60;
-}
-
-nav.main-nav .sub-menu li {
-  display: block;
+  padding: 8px 0;
   margin: 0;
-  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 100;
 }
 
-nav.main-nav .sub-menu a {
+nav.main-nav > ul > li:hover .dropdown-menu,
+nav.main-nav > ul > li.focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
   display: block;
-  padding: 9px 12px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
-  text-transform: none;
-  letter-spacing: normal;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--navy);
-  border-radius: 6px;
-  white-space: nowrap;
+  text-transform: none;
+  border-radius: 0;
 }
 
-nav.main-nav .sub-menu a:hover {
+.dropdown-menu a:hover {
   background: var(--cream);
   color: var(--azure);
 }
 
-/* Show sub-menu on hover */
-nav.main-nav > ul > li:hover > .sub-menu,
-nav.main-nav > ul > li:focus-within > .sub-menu {
-  display: block !important;
-}
-
-/* ---------- Mobile toggle button ---------- */
+/* Mobile Responsive Nav */
 .nav-toggle {
   display: none;
   background: none;
@@ -227,15 +248,69 @@ nav.main-nav > ul > li:focus-within > .sub-menu {
   border-radius: 6px;
   padding: 8px 10px;
   cursor: pointer;
-  flex-shrink: 0;
 }
-
 .nav-toggle span {
   display: block;
   width: 22px;
   height: 2px;
   background: var(--azure);
   margin: 4px 0;
+}
+
+@media (max-width: 880px) {
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav.main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--line);
+    box-shadow: var(--shadow);
+    display: none;
+  }
+
+  nav.main-nav.open {
+    display: block;
+  }
+
+  nav.main-nav > ul {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 0;
+  }
+
+  nav.main-nav a {
+    padding: 12px 20px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-left: 3px solid var(--gold);
+    border-radius: 0;
+    background: var(--cream);
+    padding: 0;
+    margin-left: 20px;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .has-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .has-dropdown.open .arrow {
+    transform: rotate(180deg);
+  }
 }
 
 /* ---------- Hero / banner ---------- */
