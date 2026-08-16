@@ -119,29 +119,40 @@
 
 <!-- Gallery Loader Script -->
 <script>
-  // Add the filenames of images stored in your /images folder
-  const galleryImages = [
-    { src: 'images/banner.png', title: 'Club Members' },
-    { src: 'images/logo.jpg', title: 'Rotary Emblem' }
-    // Add additional filenames here: 'images/photo1.jpg', 'images/photo2.jpg', etc.
-  ];
+  // Replace with your GitHub username and repository name
+  const githubUser = 'edataworker';
+  const githubRepo = 'sjrotary';
+  const imageFolder = 'images';
 
   const galleryGrid = document.getElementById('gallery-grid');
 
-  galleryImages.forEach(img => {
-    const card = document.createElement('div');
-    card.className = 'card gallery-card';
-    card.style.cssText = 'overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);';
-    
-    card.innerHTML = `
-      <img src="${img.src}" alt="${img.title}" style="width: 100%; height: 200px; object-fit: cover; display: block;" loading="lazy">
-      <div style="padding: 12px 15px;">
-        <h4 style="margin: 0; font-size: 0.95rem; color: #002452;">${img.title}</h4>
-      </div>
-    `;
-    
-    galleryGrid.appendChild(card);
-  });
+  fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/contents/${imageFolder}`)
+    .then(response => response.json())
+    .then(files => {
+      if (!Array.isArray(files)) return;
+
+      galleryGrid.innerHTML = ''; // Clear container
+
+      // Filter out non-images and template logos/banners
+      const photos = files.filter(file => 
+        file.type === 'file' && 
+        /\.(jpe?g|png|gif|webp)$/i.test(file.name) &&
+        !['logo.jpg', 'banner.png'].includes(file.name.toLowerCase())
+      );
+
+      photos.forEach(file => {
+        const card = document.createElement('div');
+        card.className = 'card gallery-card';
+        card.style.cssText = 'overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);';
+
+        card.innerHTML = `
+          <img src="${file.path}" alt="${file.name}" style="width: 100%; height: 220px; object-fit: cover; display: block;" loading="lazy">
+        `;
+
+        galleryGrid.appendChild(card);
+      });
+    })
+    .catch(err => console.error('Error fetching images from Git repository:', err));
 </script>
 
 <footer class="site-footer">
